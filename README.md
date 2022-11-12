@@ -1,2 +1,2 @@
 # Tobazone.com
-Tobazone.com adalah aplikasi ecommerce untuk menjual produk lokal khas Danau Toba, sumatera utara. Aplikasi ini didirikan oleh perusahaan CV komunitas pariwisata Toba. Aplikasi ini berisi fitur produk lokal, aksesoris, fashion dan lain sebagainya, aplikasi ini juga di lengkapi dengan pembelian dan pengirimian dengan Jasa pengiriman di indonesia.
+Tobazone.com is an e-commerce application for selling local products typical of Lake Toba, North Sumatra. This application was founded by the Toba tourism community CV company. This application contains local products, fashion and so on, this application is also equipped with purchases and deliveries with delivery services in Indonesia.
