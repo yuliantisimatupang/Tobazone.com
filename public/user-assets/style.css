@@ -1,0 +1,1106 @@
+/* ####################################################
+:: Template Name: Essence - Fashion Ecommerce Template
+:: Author: Colorlib
+:: Author URL: https://colorlib.com
+:: Description: Essence is smart & elegant fashion e-commerce Template. It's suitable for all e-commerce business platform.
+:: Version: 1.0.0
+:: Created: April 27, 2018
+:: Last Updated: May 2, 2018
+#################################################### */
+
+/* ---------------------------------------
+##### - PLACE YOUR CUSTOM CSS HERE - #####
+--------------------------------------- */
+
+body {
+    font-size: 13px;
+    /*background-color: #f5f5f5;*/
+    background-color: white;
+    /* min-height: calc(100vh - 90px - 178px); */
+    /* position: relative; */
+    /* padding-bottom: 178px; */
+    /* min-height: 100vh; */
+}
+
+.VueCarousel-slide img {
+    width: 100%;
+}
+
+.upbanner {
+    margin-top: 10px;
+    display: block;
+}
+
+.imagesliderholder img {
+    cursor: zoom-in;
+}
+
+/*================BLOG==============*/
+
+.blog .blogcard .blogpict {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 230px;
+    cursor: pointer;
+}
+
+/*=================OwlNav===============*/
+
+.npnav button, .npnavb button {
+    width: 30px;
+    background-color: #ffffff;
+    margin: 0px 10px 0px 10px;
+    border-radius: 3px;
+    border: 1px solid #c5c5c5;
+}
+
+.npnav button:hover {
+    cursor: pointer;
+    background-color: #c5c5c5;
+    transition-duration: 0.3s;
+}
+
+.npnavb .owl-prev {
+    background-color: #2196F3;
+    left: 100px;
+}
+
+/*==============HEADER================*/
+
+.main {
+    box-shadow: 0px 2px 9px #88888824;
+}
+
+.header_area .header-meta {
+    height: auto;
+}
+
+.header_area .classy-navbar {
+    height: auto;
+}
+
+.header_area .search-area form input, .header_area .search-area form input:focus {
+    width: inherit;
+}
+
+.navbar ul li a {
+    color: black;
+    font-weight: 500;
+}
+
+.header_area .classynav ul li a {
+    color: black;
+    font-weight: 500;
+}
+
+.classy-nav-container a:hover {
+    color: black;
+}
+
+/* Style the search field */
+
+form.example input[type=text] {
+    padding: 10px;
+    font-size: small;
+    background-color: #fff;
+    border: 1px solid #A8A8A8;
+    float: left;
+    width: 80%;
+    border-right: none;
+}
+
+/* Style the submit button */
+
+form.example button {
+    background-color: #fff;
+    float: left;
+    width: 20%;
+    padding: 10px;
+    color: #000000;
+    font-size: small;
+    border: 1px solid grey;
+    border-left: none;
+    /* Prevent double borders */
+    cursor: pointer;
+    height: 41px;
+}
+
+/*form.example button:hover {*/
+
+/*background: #0b7dda;*/
+
+/*}*/
+
+/* Clear floats */
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.search-area input:focus {
+    outline: none !important;
+}
+
+.dropdown-menu {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.dropdown-menu .dropdown-item {
+    padding-left: 1rem
+}
+
+.classynav .dropdown li .btn:focus {
+    outline: none !important;
+    box-shadow: none;
+}
+
+/*.header_area .cart-area a{*/
+
+/*line-height: 85px;*/
+
+/*}*/
+
+/*================FOOTER==============*/
+
+.width_section {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer_area {
+    border-top: 10px #4b1815 solid;
+    background-color: #1a1a1a;
+    padding: 30px 0 10px;
+    width: 100%;
+    bottom: 0;
+    /* position: absolute; */
+}
+
+.footer_area p {
+    color: #ffffffb3;
+}
+
+.footer_area h6 {
+    color: white;
+}
+
+.footer_area a {
+    color: #ffffffb3;
+    font-size: 14px;
+    line-height: 2;
+    font-weight: 400;
+}
+
+/* ========= form ========= */
+
+.formbadge {
+    background-color: transparent;
+    border: 1px #6c757d solid;
+}
+
+/*=============BANNER================*/
+
+.banner {
+    display: flex;
+}
+
+.banner_item {
+    margin: 2px;
+    min-width: 300px;
+    /*width: 33%;*/
+}
+
+.banner_item img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* ===== button upload image ======*/
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    padding: 3px;
+    border-radius: 6px;
+    border: 2px dashed gray;
+    cursor: pointer;
+}
+
+.btn-upcus {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn-upcus img {
+    height: 40px;
+    opacity: 0.5;
+}
+
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.globalcard {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border: none;
+    background-color: #ffffff;
+}
+
+.breadcrumbcard {
+    padding: 0.75rem;
+}
+
+.kurir {
+    height: 30px;
+}
+
+.product {
+    margin: 2px;
+    border: 1px solid #eee;
+}
+
+.product:hover {
+    box-shadow: 0 0 4px 1px rgba(204, 204, 204, .48);
+    cursor: pointer;
+    transform: translateY(-2px);
+    transition-duration: 0.3s;
+    /* border: 1px solid #0000000f; */
+}
+
+.globalcard .card-header {
+    background-color: #fff;
+}
+
+.imgwrapper {
+    position: relative;
+    border-radius: 0.2rem 0.2rem 0 0;
+    overflow: hidden;
+    height: 180px;
+    text-align: center;
+    padding: 0.5em;
+}
+
+.imgwrapper-duplicate {
+    position: relative;
+    border-radius: 0.2rem 0.2rem 0 0;
+    overflow: hidden;
+    height: auto;
+    width: auto;
+    text-align: center;
+    padding: 0.5em;
+}
+
+.imgwrapper img {
+    width: 180px;
+    height: 180px;
+    max-width: 100%;
+    max-height: 100%;
+    display: inline-block;
+    object-fit: scale-down;
+}
+
+.imgwrapper-a {
+    height: 160px;
+    width: 160px;
+}
+
+.img-circle {
+    border-radius: 80px;
+}
+
+.product .card-text {
+    font-size: small;
+    margin-bottom: 0;
+}
+
+.product .productname {
+    color: black;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.product .card-body {
+    padding: 0.5rem;
+    min-height: 90px;
+}
+
+.cto {
+    margin-top: 3em;
+    width: 100%;
+}
+
+.cto img {
+    object-fit: cover;
+    /*height: 300px;*/
+}
+
+.favourite-area .lo a {
+    font-size: 16px;
+}
+
+.favourite-area a:hover {
+    font-size: 16.4px;
+}
+
+/*hover card*/
+
+.product {
+    position: relative;
+    float: left;
+}
+
+.globalcard .globalcardbody {
+    height: 353px;
+}
+
+.product .hover-content {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    padding: 0;
+}
+
+.product:hover .hover-content {
+    height: auto;
+    visibility: visible;
+    opacity: 10;
+    transition: opacity 1s ease;
+}
+
+.product .hover-content .product-btn {
+    display: inline-block;
+    min-width: 170px;
+    color: #ffffff;
+    border: none;
+    border-radius: 0;
+    padding: 0 40px;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 30px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    background-color: #721c24;
+}
+
+/*-------------PRODUCTS---------------*/
+
+.products .card-text {
+    font-size: small;
+    margin-bottom: 0;
+}
+
+.products .productname {
+    color: black;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.products .card-body {
+    padding: 0.5rem;
+}
+
+.products {
+    margin-bottom: 1em;
+    /*border: none;*/
+}
+
+.products:hover {
+    box-shadow: 0px 0px 5px 1px #00000030;
+    cursor: pointer;
+    transform: translateY(-2px);
+    transition-duration: 0.3s;
+}
+
+.products .hover-content .product-btn {
+    display: inline-block;
+    width: 100%;
+    color: #ffffff;
+    border: none;
+    border-radius: 0;
+    padding: 0 40px;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 30px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    background-color: #721c24;
+}
+
+.product .hover-content {
+    visibility: visible;
+    opacity: 0;
+    height: 0;
+    padding: 0;
+}
+
+/*---------------CTO------------*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+.grid-container>div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    padding-top: 900px;
+}
+
+.item1 {
+    grid-row: 1 / 3;
+}
+
+/*============SINGLE PRODUCT===========*/
+
+.detailproduct .carousel {
+    /*margin-top: 1em;*/
+}
+
+.detailproduct .imagesliderholder {
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+.detailproduct .carousel-item {
+    margin-top: 1em;
+    height: 300px;
+    text-align: center;
+}
+
+.detailproduct .carousel-item img {
+    /*object-fit: cover;*/
+    position: relative;
+    height: inherit;
+}
+
+.detailproduct .smallimage li {
+    margin-right: 1em;
+    text-align: center;
+    border: 1px solid #dfdfdf;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.detailproduct .smallimage li:hover {
+    margin-right: 1em;
+    text-align: center;
+    border: 1px solid #9a4a33;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.detailproduct .smallimage img {
+    height: 50px;
+    cursor: pointer;
+}
+
+.detailproduct .price {}
+
+.detailreview {
+    width: 100%;
+}
+
+.detailreview .nav-tabs .nav-link.active {
+    border: none;
+    border-bottom: 2px solid saddlebrown;
+    font-size: inherit;
+}
+
+.detailreview .nav-tabs .nav-link {
+    border: none;
+    font-size: inherit;
+}
+
+.detailreview .nav-tabs .nav-link:hover {}
+
+.detailreview .nav-item i {
+    font-size: x-large;
+}
+
+.detailreview .nav-item span {
+    vertical-align: super;
+}
+
+.detailreview .nav-tabs .nav-link.active {
+    color: saddlebrown;
+}
+
+.detailreview .ulasan .imgwrapper {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid #c6c6c6;
+}
+
+.detailreview .ulasan img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+}
+
+.vimagewrapper {
+    height: auto;
+}
+
+.vimg {
+    max-height: 100%;
+    /*height: 130px;*/
+    object-fit: scale-down;
+    padding: 3px;
+    border: 1px #d4d4d4 solid;
+    border-radius: 0.25em;
+}
+
+.custom-badge {
+    font-size: 100%;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #783223
+}
+
+/*------------Keranjang---------------*/
+
+.keranjang {
+    margin-top: 100px;
+}
+
+.keranjang .imgwrapper {
+    height: auto;
+}
+
+.keranjang img {
+    max-height: 100%;
+    height: 130px;
+    object-fit: scale-down;
+    padding: 3px;
+    border: 1px #d4d4d4 solid;
+    border-radius: 0.25em;
+}
+
+.keranjang .card-footer {
+    background-color: white;
+}
+
+.keranjang .totalpay {
+    border: 0px;
+}
+
+.keranjang .paynow {
+    font-weight: 600;
+}
+
+.keranjang .btn-xs {
+    padding: .25rem .4rem;
+    font-size: .875rem;
+    line-height: .5;
+    border-radius: .2rem;
+}
+
+/*======= Checkout==========*/
+
+.checkout img {
+    max-height: 100%;
+    height: 130px;
+    object-fit: scale-down;
+    padding: 3px;
+    border: 1px #d4d4d4 solid;
+    border-radius: 0.25em;
+}
+
+.checkout .imgwrapper {
+    height: auto;
+}
+
+/*---------------Merchant--------------*/
+
+#result img {
+    height: 100px;
+    object-fit: scale-down;
+    border: 1px solid grey;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.store {
+    padding: 0.3rem;
+    box-shadow: 0px 2px 8px 0px #0000004a;
+}
+
+.store-name h5 {
+    color: dodgerblue;
+}
+
+.store-desc i {
+    color: dodgerblue;
+}
+
+.store-share button {
+    float: right;
+    width: 35px;
+    margin-left: 8px;
+}
+
+.merchant-sidebar .mercant-sidebar-menu .sub-menu li>a {
+    text-transform: capitalize;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: 500;
+    color: #787878;
+    cursor: pointer;
+}
+
+.merchant-sidebar .mercant-sidebar-menu li>a {
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 15px;
+    display: block;
+    cursor: pointer;
+}
+
+.mercant-sidebar-menu .sub-menu {
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.mproduct .collapse ul li a {
+    cursor: pointer;
+}
+
+/*============PAYMENT===========*/
+
+.payment {
+    margin-top: 100px;
+}
+
+.payment .time {
+    background-color: #f7f8f7;
+    border: 1px solid #d4d4d4;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #cde4c3;
+    border-radius: 5px;
+    border-bottom: 1px solid #cde4c3 !important;
+    padding: 10px;
+}
+
+.payment h4 {
+    vertical-align: bottom;
+}
+
+/*============ HORIZONTAL CARD ==============*/
+
+.hcard .card-body {
+    padding: 0.3rem;
+}
+
+/*// Extra small devices (portrait phones, less than 576px)*/
+
+@media (max-width: 575.98px) {
+    .horizontalcard .shrink {}
+    .slide {
+        padding: 1px;
+    }
+}
+
+/*=========merchantDashboard============*/
+
+.widget .card {
+    background-color: #2196F3;
+    border: none;
+    color: white;
+    padding: 1em;
+    box-shadow: 2px 2px 10px #DADADA;
+}
+
+.stat-widget-five {
+    min-height: 60px;
+}
+
+.stat-widget-five .stat-icon {
+    font-size: 50px;
+    line-height: 50px;
+    position: absolute;
+    left: 30px;
+}
+
+.stat-widget-five .stat-content {
+    margin-left: 100px;
+}
+
+.stat-widget-five .stat-text {
+    color: #455a64;
+    font-size: 20px;
+}
+
+.stat-widget-five .stat-heading {
+    color: #99abb4;
+    font-size: 14px;
+}
+
+/*===============Costumer Pesanan==============*/
+
+.detailorder .small {
+    font-size: 80%;
+    font-weight: 400;
+}
+
+.detailorder .detail {
+    font-weight: 500;
+}
+
+.pesanan img {
+    max-height: 100%;
+    height: 130px;
+    object-fit: scale-down;
+    padding: 3px;
+    border: 1px #d4d4d4 solid;
+    border-radius: 0.25em;
+}
+
+.detailpesanan img {
+    max-height: 100%;
+    /*height: 130px;*/
+    object-fit: scale-down;
+    padding: 3px;
+    border: 1px #d4d4d4 solid;
+    border-radius: 0.25em;
+}
+
+/*============button============*/
+
+.smallbtn {
+    background-color: orange;
+    border-radius: 3px;
+    padding: 5px 15px;
+    color: white;
+}
+
+.mediumbtn {
+    background-color: orange;
+    border-radius: 3px;
+    padding: 10px;
+    width: 100px;
+    color: white;
+    font-weight: lighter;
+    height: auto;
+}
+
+.essence-btn {
+    background-color: black;
+}
+
+.essence-btn:hover, .essence-btn:focus {
+    background-color: #4b1815;
+    border-color: #813E39;
+}
+
+.essence-btn-sm {
+    background-color: black;
+    color: #ffffff;
+    font-size: 10px;
+}
+
+.essence-btn-sm:hover, .essence-btn-sm:focus {
+    background-color: #4b1815;
+    border-color: #813E39;
+}
+
+/*===========VUE CAROUSEL=============*/
+
+/**/
+
+/*============Modal login==============*/
+
+.loginmodal a {
+    color: #007bff;
+    font-size: 14px;
+    line-height: 2;
+    font-weight: 400;
+}
+
+.loginmodal p {
+    color: black;
+    margin-bottom: 0px;
+}
+
+.loginmodal input {
+    border-left: none;
+}
+
+.loginmodal .input-group-text {
+    background-color: transparent;
+    width: 40px;
+    text-align: center;
+    border-right-style: unset;
+}
+
+.loginmodal input:-webkit-autofill {
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0 0 0px 9999px white;
+}
+
+.loginmodal input:focus, input:-webkit-autofill:focus {
+    border-color: #66afe9;
+    -webkit-box-shadow: inset 0 0 0px 9999px white, 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.loginmodal .modal-header {
+    border-top: 4px solid #4b1815;
+}
+
+.loginmodal .lupas p:hover {
+    color: #4b1815;
+}
+
+/*===============REGISTRATION=================*/
+
+.registration .card {
+    border: none;
+}
+
+.registration label {
+    font-size: small;
+}
+
+.registration .nav-tabs .nav-link {
+    border: none;
+}
+
+.registration .nav-tabs .nav-link:hover {
+    border-bottom: 2px solid black;
+}
+
+.registration .nav-tabs .nav-link.active, .registration .nav-tabs .nav-link.active:hover {
+    border: none;
+    border-bottom: 2px solid black;
+    color: black;
+    font-weight: 900;
+}
+
+.registration .nav-tabs .nav-link:hover {
+    border: none;
+    transition: none;
+}
+
+.registration .nav-tabs .nav-link h6 {
+    font-size: large;
+    font-weight: 800;
+    color: black;
+}
+
+.registration .nav-tabs .nav-link.active h6, .registration .nav-tabs .nav-link.active h6:hover {
+    font-size: large;
+    font-weight: 800;
+    color: #4b1815;
+}
+
+.registration .custom-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/*.registration  .nav .nav-item .show{*/
+
+/*background-color: #2196F3;*/
+
+/*}*/
+
+#load {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9999;
+    background: url("https://www.creditmutuel.fr/cmne/fr/banques/webservices/nswr/images/loading.gif") no-repeat center center rgba(0, 0, 0, 0.25)
+}
+
+/*// Extra small devices (portrait phones, less than 576px)*/
+
+@media (max-width: 576px) {
+    .navbar .navbar-collapse .search {
+        visibility: hidden;
+    }
+    .navbar .custom-container {
+        justify-content: space-between;
+    }
+    .store .widget span {
+        font-size: medium;
+        font-weight: 800;
+    }
+    .loginmodal .modal-body {
+        padding-left: 1rem!important;
+        padding-right: 1rem!important;
+    }
+    .loginmodal .modal-footer {
+        padding-left: 1rem!important;
+        padding-right: 1rem!important;
+    }
+}
+
+/*// Small devices (landscape phones, 576px and up)*/
+
+@media (min-width: 576px) {
+    .quantity {
+        margin-top: 1em;
+    }
+    .header_area .search-area form input {
+        width: 100%;
+    }
+    .loginmodal p, .loginmodal a {
+        font-size: small;
+    }
+    .smallimageholder ul {
+        flex-direction: row;
+    }
+    .search-area form {
+        width: auto;
+    }
+    .smallimageholder ul {
+        flex-direction: row;
+    }
+    .header_area .cart-area a {
+        height: 40px;
+    }
+    .globalcard .product {
+        border: 1px solid rgba(0, 0, 0, .125);
+    }
+    .navbar .navbar-collapse .search {
+        visibility: hidden;
+    }
+    .navbar .custom-container {
+        justify-content: space-between;
+    }
+    .navbar .navbar-expand-lg {
+        border-bottom: none;
+    }
+    .store .widget span {
+        font-size: medium;
+        font-weight: 800;
+    }
+    .loginmodal .modal-body {
+        padding-left: 1rem!important;
+        padding-right: 1rem!important;
+    }
+    .loginmodal .modal-footer {
+        padding-left: 1rem!important;
+        padding-right: 1rem!important;
+    }
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+
+@media (min-width: 768px) {
+    .header_area .cart-area a {
+        height: 40px;
+    }
+    .navbar .navbar-expand-lg {
+        border-bottom: none;
+    }
+    .store .widget span {
+        font-size: medium;
+        font-weight: 800;
+    }
+    .loginmodal .modal-body {
+        padding-left: 3rem!important;
+        padding-right: 3rem!important;
+    }
+    .loginmodal .modal-footer {
+        padding-left: 3rem!important;
+        padding-right: 3rem!important;
+    }
+}
+
+/*// Large devices (desktops, 992px and up)*/
+
+@media (min-width: 992px) {
+    .search-area form {
+        width: 400px;
+    }
+    .smallimageholder ul {
+        flex-direction: column;
+    }
+    .navbar2 {
+        border-bottom: 1px solid #ebebeb;
+    }
+    .store .widget span {
+        font-size: large;
+        font-weight: 800;
+    }
+    .loginmodal .modal-body {
+        padding-left: 3rem!important;
+        padding-right: 3rem!important;
+    }
+    .loginmodal .modal-footer {
+        padding-left: 3rem!important;
+        padding-right: 3rem!important;
+    }
+}
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+
+@media (min-width: 1200px) {
+    .search-area form {
+        width: 400px;
+    }
+    .smallimageholder ul {
+        flex-direction: column;
+    }
+    .header_area .cart-area a {
+        height: 85px;
+    }
+    .product {
+        border: none;
+    }
+    .navbar .navbar-expand-lg {
+        border-bottom: 1px solid #ebebeb;
+    }
+    .navbar {
+        background-color: #FFFAF3;
+        padding: 1rem 0 1rem;
+    }
+    .navbar2 {
+        background-color: #F7F1E7;
+        padding: 0 0 0 0;
+    }
+    .store .widget span {
+        font-size: large;
+        font-weight: 800;
+    }
+    .loginmodal .modal-body {
+        padding-left: 3rem!important;
+        padding-right: 3rem!important;
+    }
+    .loginmodal .modal-footer {
+        padding-left: 3rem!important;
+        padding-right: 3rem!important;
+    }
+}

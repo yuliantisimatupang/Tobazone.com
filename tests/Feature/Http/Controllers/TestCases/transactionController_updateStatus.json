@@ -1,0 +1,82 @@
+[
+    {
+        "test_name": "success_terima",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "customer": {
+                "username": "customer"
+            },
+            "transaction": {
+                "shipping_number": "660006871175",
+                "courier": "tiki",
+                "address": "Customer, 08123 Simpang Empat Laguboti, Laguboti, Toba Samosir, Sumatera Utara (22316)",
+                "status": "pending"
+            },
+            "order": {
+                "quantity": 1
+            },
+            "product": {
+                "name": "Tas Pakkat",
+                "price": "50000",
+                "images": "[\"1589785670tas pakkat.jpg\"]",
+                "category": "Buatan Tangan",
+                "stock": 100,
+                "sold": 0,
+                "description": "Bahan dasar dari rotan dan bambu",
+                "specification": "{\"size\":\"Sedang\",\"weight\":\"1\"}",
+                "color": "Hitam",
+                "cat_product": "aksesoris",
+                "asal": "Toba Samosir"
+            },
+            "request": {
+                "status": "acceptedByAdmin"
+            }
+        },
+        "test_expected_result": {
+            "updated_transaction": 1,
+            "updated_product": 1
+        }
+    },
+    {
+        "test_name": "success_tolak",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "customer": {
+                "username": "customer"
+            },
+            "transaction": {
+                "shipping_number": "660006871175",
+                "courier": "tiki",
+                "address": "Customer, 08123 Simpang Empat Laguboti, Laguboti, Toba Samosir, Sumatera Utara (22316)",
+                "status": "pending"
+            },
+            "order": {
+                "quantity": 1
+            },
+            "product": {
+                "name": "Tas Pakkat",
+                "price": "50000",
+                "images": "[\"1589785670tas pakkat.jpg\"]",
+                "category": "Buatan Tangan",
+                "stock": 100,
+                "sold": 0,
+                "description": "Bahan dasar dari rotan dan bambu",
+                "specification": "{\"size\":\"Sedang\",\"weight\":\"1\"}",
+                "color": "Hitam",
+                "cat_product": "aksesoris",
+                "asal": "Toba Samosir"
+            },
+            "request": {
+                "status": "rejectedByAdmin"
+            }
+        },
+        "test_expected_result": {
+            "updated_transaction": 1,
+            "updated_product": 0
+        }
+    }
+]

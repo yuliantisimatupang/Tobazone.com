@@ -1,0 +1,3609 @@
+[
+    {
+        "test_name": "tc1_success_store_ulos",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ulos Sadum",
+                    "price": 70000,
+                    "images": ["1601342622ulos.jpeg"],
+                    "stock": 15,
+                    "description": "Ulos Sadum dimaknai oleh suku Batak sebagai simbol suka cita sebagai pertanda motifasi penyemangat dalam suatu keluarga agar tetap bersuka cita melakukan segala aktifitas sehari-hari.",
+                    "product_origin": "Pollung",
+                    "dimention": "200cm x 70cm",
+                    "weight": 300,
+                    "color": "Merah",
+                    "category": "Mesin"
+                },
+                "id_product_type": 1
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Ulos Sadum",
+                "price": 70000,
+                "images": "[\"1601342622ulos.jpeg\"]",
+                "stock": 15,
+                "description": "Ulos Sadum dimaknai oleh suku Batak sebagai simbol suka cita sebagai pertanda motifasi penyemangat dalam suatu keluarga agar tetap bersuka cita melakukan segala aktifitas sehari-hari.",
+                "specification": "{\"dimention\":\"200cm x 70cm\",\"weight\":300}",
+                "asal": "Pollung",
+                "color": "Merah",
+                "category": "Mesin",
+                "sold": 0,
+                "cat_product": "ulos"
+            }
+        }
+    },
+    {
+        "test_name": "tc2_failed_store_empty_ulos",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "",
+                    "price": 0,
+                    "images": [],
+                    "stock": 0,
+                    "description": "",
+                    "product_origin": "",
+                    "dimention": "",
+                    "weight": 0,
+                    "color": "Merah",
+                    "category": "Mesin"
+                },
+                "id_product_type": 1
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc3_failed_store_ulos_with_merchant_not_authenticated",
+        "test_data": {
+            "merchant": null,
+            "request": {
+                "product": {
+                    "name": "Ulos Sadum123",
+                    "price": 70000,
+                    "images": ["1601342622ulos.jpeg"],
+                    "stock": 15,
+                    "description": "Ulos Sadum dimaknai oleh suku Batak sebagai simbol suka cita sebagai pertanda motifasi penyemangat dalam suatu keluarga agar tetap bersuka cita melakukan segala aktifitas sehari-hari.",
+                    "product_origin": "Pollung",
+                    "dimention": "200cm x 70cm",
+                    "weight": 300,
+                    "color": "Merah",
+                    "category": "Mesin"
+                },
+                "id_product_type": 1
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc4_success_store_ulos_with_name_contains_symbol",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ulos_Sadum_Pacca_Putih",
+                    "price": 70000,
+                    "images": ["1601342622ulos.jpeg"],
+                    "stock": 15,
+                    "description": "Ulos Sadum dimaknai oleh suku Batak sebagai simbol suka cita sebagai pertanda motifasi penyemangat dalam suatu keluarga agar tetap bersuka cita melakukan segala aktifitas sehari-hari.",
+                    "product_origin": "Pollung",
+                    "dimention": "200cm x 70cm",
+                    "weight": 300,
+                    "color": "Merah",
+                    "category": "Mesin"
+                },
+                "id_product_type": 1
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Ulos_Sadum_Pacca_Putih",
+                "price": 70000,
+                "images": "[\"1601342622ulos.jpeg\"]",
+                "stock": 15,
+                "description": "Ulos Sadum dimaknai oleh suku Batak sebagai simbol suka cita sebagai pertanda motifasi penyemangat dalam suatu keluarga agar tetap bersuka cita melakukan segala aktifitas sehari-hari.",
+                "specification": "{\"dimention\":\"200cm x 70cm\",\"weight\":300}",
+                "asal": "Pollung",
+                "color": "Merah",
+                "category": "Mesin",
+                "sold": 0,
+                "cat_product": "ulos"
+            }
+        }
+    },
+    {
+        "test_name": "tc5_success_store_ulos_with_name_contains_uppercases_symbol_number",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ulos_SADUM_Pacca_Putih12",
+                    "price": 70000,
+                    "images": ["1601342622ulos.jpeg"],
+                    "stock": 15,
+                    "description": "Ulos Sadum dimaknai oleh suku Batak sebagai simbol suka cita sebagai pertanda motifasi penyemangat dalam suatu keluarga agar tetap bersuka cita melakukan segala aktifitas sehari-hari.",
+                    "product_origin": "Pollung",
+                    "dimention": "200cm x 70cm",
+                    "weight": 300,
+                    "color": "Merah",
+                    "category": "Mesin"
+                },
+                "id_product_type": 1
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Ulos_SADUM_Pacca_Putih12",
+                "price": 70000,
+                "images": "[\"1601342622ulos.jpeg\"]",
+                "stock": 15,
+                "description": "Ulos Sadum dimaknai oleh suku Batak sebagai simbol suka cita sebagai pertanda motifasi penyemangat dalam suatu keluarga agar tetap bersuka cita melakukan segala aktifitas sehari-hari.",
+                "specification": "{\"dimention\":\"200cm x 70cm\",\"weight\":300}",
+                "asal": "Pollung",
+                "color": "Merah",
+                "category": "Mesin",
+                "sold": 0,
+                "cat_product": "ulos"
+            }
+        }
+    },
+    {
+        "test_name": "tc6_success_store_makanan",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ikan mas arsik",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik.",
+                    "product_origin": "Balige",
+                    "dimention": "200cm x 70cm",
+                    "weight": 1000,
+                    "color": "1 Minggu",
+                    "category": "Kering"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Ikan mas arsik",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas.jpeg\"]",
+                "stock": 5,
+                "description": "Ikan mas yang diarsik.",
+                "specification": "{\"size_pack\":\"200cm x 70cm\",\"weight\":1000,\"umur_simpan\":\"1 Minggu\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Kering",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    },
+    {
+        "test_name": "tc7_failed_store_makanan_with_merchant_not_authenticated",
+        "test_data": {
+            "merchant": null,
+            "request": {
+                "product": {
+                    "name": "Tanggo-tanggo",
+                    "price": 45000,
+                    "images": ["tanggo.jpeg"],
+                    "stock": 5,
+                    "description": "Tanggo-tanggo dengan ukuran sekepal tangan orang dewasa berwarna kehitaman.",
+                    "product_origin": "Balige",
+                    "dimention": "200cm x 70cm",
+                    "weight": 1000,
+                    "color": "1 Minggu",
+                    "category": "Basah"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc8_failed_store_empty_makanan",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "",
+                    "price": 0,
+                    "images": [],
+                    "stock": 0,
+                    "description": "",
+                    "product_origin": "",
+                    "dimention": "",
+                    "weight": 0,
+                    "color": "1 Minggu",
+                    "category": "Kering"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc9_success_store_makanan_with_name_contains_symbol_numeric",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "1kan_mas_arsik",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik.",
+                    "product_origin": "Balige",
+                    "dimention": "200cm x 70cm",
+                    "weight": 1000,
+                    "color": "1 Minggu",
+                    "category": "Kering"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "1kan_mas_arsik",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas.jpeg\"]",
+                "stock": 5,
+                "description": "Ikan mas yang diarsik.",
+                "specification": "{\"size_pack\":\"200cm x 70cm\",\"weight\":1000,\"umur_simpan\":\"1 Minggu\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Kering",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    },
+    {
+        "test_name": "tc10_success_store_makanan_with_name_contains_uppercases_symbol_numeric",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "1KAN_MAS_ARSIK",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik.",
+                    "product_origin": "Balige",
+                    "dimention": "200cm x 70cm",
+                    "weight": 1000,
+                    "color": "1 Minggu",
+                    "category": "Kering"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "1KAN_MAS_ARSIK",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas.jpeg\"]",
+                "stock": 5,
+                "description": "Ikan mas yang diarsik.",
+                "specification": "{\"size_pack\":\"200cm x 70cm\",\"weight\":1000,\"umur_simpan\":\"1 Minggu\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Kering",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    },
+    {
+        "test_name": "tc11_success_store_pakaian",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Noke Papua",
+                    "price": 30000,
+                    "images": ["noke-papua.jpeg"],
+                    "stock": 2,
+                    "description": "Noken buatan orang papua untuk tas laptop dan buku.",
+                    "product_origin": "Tolikara",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Biru",
+                    "category": "Pria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Noke Papua",
+                "price": 30000,
+                "images": "[\"noke-papua.jpeg\"]",
+                "stock": 2,
+                "description": "Noken buatan orang papua untuk tas laptop dan buku.",
+                "specification": "{\"size\":\"M\",\"weight\":20}",
+                "asal": "Tolikara",
+                "color": "Biru",
+                "category": "Pria",
+                "sold": 0,
+                "cat_product": "pakaian"
+            }
+        }
+    },
+    {
+        "test_name": "tc12_failed_store_pakaian_with_merchant_not_authenticated",
+        "test_data": {
+            "merchant": null,
+            "request": {
+                "product": {
+                    "name": "Noken Papua",
+                    "price": 30000,
+                    "images": ["noke-papua.jpeg"],
+                    "stock": 2,
+                    "description": "Noken buatan orang Papua untuk tas dan laptop.",
+                    "product_origin": "Tolikara",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Biru",
+                    "category": "Pria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc13_failed_store_pakaian_with_empty_required_field_description",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Noke Papua",
+                    "price": 30000,
+                    "images": ["noke-papua.jpeg"],
+                    "stock": 2,
+                    "description": "",
+                    "product_origin": "Tolikara",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Biru",
+                    "category": "Pria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc14_success_store_pakaian_with_contains_uppercases_symbol",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "NOKE PAPUA!!",
+                    "price": 30000,
+                    "images": ["noke-papua.jpeg"],
+                    "stock": 2,
+                    "description": "NOKEN BUATAN ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                    "product_origin": "TOLIKARA",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Biru",
+                    "category": "Pria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "NOKE PAPUA!!",
+                "price": 30000,
+                "images": "[\"noke-papua.jpeg\"]",
+                "stock": 2,
+                "description": "NOKEN BUATAN ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                "specification": "{\"size\":\"M\",\"weight\":20}",
+                "asal": "TOLIKARA",
+                "color": "Biru",
+                "category": "Pria",
+                "sold": 0,
+                "cat_product": "pakaian"
+            }
+        }
+    },
+    {
+        "test_name": "tc15_success_store_pakaian_with_contains_uppercases_numeric_symbol",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "NOKE PAPUA123!",
+                    "price": 30000,
+                    "images": ["noke-papua.jpeg"],
+                    "stock": 2,
+                    "description": "NOKEN BUATAN ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                    "product_origin": "TOLIKARA",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Biru",
+                    "category": "Pria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "NOKE PAPUA123!",
+                "price": 30000,
+                "images": "[\"noke-papua.jpeg\"]",
+                "stock": 2,
+                "description": "NOKEN BUATAN ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                "specification": "{\"size\":\"M\",\"weight\":20}",
+                "asal": "TOLIKARA",
+                "color": "Biru",
+                "category": "Pria",
+                "sold": 0,
+                "cat_product": "pakaian"
+            }
+        }
+    },
+    {
+        "test_name": "tc16_success_store_aksesoris",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Tas Pakkat",
+                    "price": 50000,
+                    "images": ["tas-pakkat.jpeg"],
+                    "stock": 100,
+                    "description": "Bahan dasar dari rotan dan bambu.",
+                    "product_origin": "Toba Samosir",
+                    "dimention": "Sedang",
+                    "weight": 1,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Tas Pakkat",
+                "price": 50000,
+                "images": "[\"tas-pakkat.jpeg\"]",
+                "stock": 100,
+                "description": "Bahan dasar dari rotan dan bambu.",
+                "specification": "{\"size\":\"Sedang\",\"weight\":1}",
+                "asal": "Toba Samosir",
+                "color": "Hitam",
+                "category": "Buatan Tangan",
+                "sold": 0,
+                "cat_product": "aksesoris"
+            }
+        }
+    },
+    {
+        "test_name": "tc17_failed_store_aksesoris_with_merchant_not_authenticated",
+        "test_data": {
+            "merchant": null,
+            "request": {
+                "product": {
+                    "name": "Tas Pakkat",
+                    "price": 50000,
+                    "images": ["tas-pakkat.jpeg"],
+                    "stock": 100,
+                    "description": "Bahan dasar dari rotan dan bambu.",
+                    "product_origin": "Toba Samosir",
+                    "dimention": "Sedang",
+                    "weight": 1,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc18_success_store_aksesoris_contains_uppercases_numeric",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "TAS PAKKAT123",
+                    "price": 50000,
+                    "images": ["tas-pakkat.jpeg"],
+                    "stock": 100,
+                    "description": "BAHAN DASAR DARI ROTAN DAN BAMBU.",
+                    "product_origin": "TOBA SAMOSIR",
+                    "dimention": "SEDANG",
+                    "weight": 1,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "TAS PAKKAT123",
+                "price": 50000,
+                "images": "[\"tas-pakkat.jpeg\"]",
+                "stock": 100,
+                "description": "BAHAN DASAR DARI ROTAN DAN BAMBU.",
+                "specification": "{\"size\":\"SEDANG\",\"weight\":1}",
+                "asal": "TOBA SAMOSIR",
+                "color": "Hitam",
+                "category": "Buatan Tangan",
+                "sold": 0,
+                "cat_product": "aksesoris"
+            }
+        }
+    },
+    {
+        "test_name": "tc19_failed_store_empty_aksesoris",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "",
+                    "price": 0,
+                    "images": [],
+                    "stock": 0,
+                    "description": "",
+                    "product_origin": "",
+                    "dimention": "",
+                    "weight": 0,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc20_success_store_aksesoris_contains_uppercases_numeric_symbol",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "TAS PAKKAT4G!",
+                    "price": 50000,
+                    "images": ["tas-pakkat.jpeg"],
+                    "stock": 100,
+                    "description": "BAHAN DASAR DARI ROTAN DAN BAMBU.",
+                    "product_origin": "TOBA SAMOSIR",
+                    "dimention": "SEDANG",
+                    "weight": 1,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "TAS PAKKAT4G!",
+                "price": 50000,
+                "images": "[\"tas-pakkat.jpeg\"]",
+                "stock": 100,
+                "description": "BAHAN DASAR DARI ROTAN DAN BAMBU.",
+                "specification": "{\"size\":\"SEDANG\",\"weight\":1}",
+                "asal": "TOBA SAMOSIR",
+                "color": "Hitam",
+                "category": "Buatan Tangan",
+                "sold": 0,
+                "cat_product": "aksesoris"
+            }
+        }
+    },
+    {
+        "test_name": "tc21_success_store_obat",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Minyak Karo",
+                    "price": 25000,
+                    "images": ["minyak-param.jpeg"],
+                    "stock": 20,
+                    "description": "Berkhasiat Ampuh!",
+                    "product_origin": "Toba Samosir",
+                    "dimention": "Cair",
+                    "weight": 100,
+                    "color": "100",
+                    "color_1": "",
+                    "category": ""
+                },
+                "id_product_type": 5
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Minyak Karo",
+                "price": 25000,
+                "images": "[\"minyak-param.jpeg\"]",
+                "stock": 20,
+                "description": "Berkhasiat Ampuh!",
+                "specification": "{\"jenis\":\"Cair\",\"weight\":100}",
+                "asal": "Toba Samosir",
+                "color": "100",
+                "category": "-",
+                "sold": 0,
+                "cat_product": "obat"
+            }
+        }
+    },
+    {
+        "test_name": "tc22_failed_store_obat_with_merchant_not_authenticated",
+        "test_data": {
+            "merchant": null,
+            "request": {
+                "product": {
+                    "name": "Minyak Karo",
+                    "price": 25000,
+                    "images": ["minyak-param.jpeg"],
+                    "stock": 20,
+                    "description": "Berkhasiat Ampuh!",
+                    "product_origin": "Toba Samosir",
+                    "dimention": "Cair",
+                    "weight": 100,
+                    "color": "100",
+                    "color_1": "",
+                    "category": ""
+                },
+                "id_product_type": 5
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc23_success_store_obat_with_contains_uppercases",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "MINYAK KARO",
+                    "price": 25000,
+                    "images": ["minyak-param.jpeg"],
+                    "stock": 20,
+                    "description": "MENYEMBUHKAN ASAM URAT SEKALI PAKAI!",
+                    "product_origin": "TOBA SAMOSIR",
+                    "dimention": "Cair",
+                    "weight": 100,
+                    "color": "100",
+                    "color_1": "",
+                    "category": ""
+                },
+                "id_product_type": 5
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "MINYAK KARO",
+                "price": 25000,
+                "images": "[\"minyak-param.jpeg\"]",
+                "stock": 20,
+                "description": "MENYEMBUHKAN ASAM URAT SEKALI PAKAI!",
+                "specification": "{\"jenis\":\"Cair\",\"weight\":100}",
+                "asal": "TOBA SAMOSIR",
+                "color": "100",
+                "category": "-",
+                "sold": 0,
+                "cat_product": "obat"
+            }
+        }
+    },
+    {
+        "test_name": "tc24_failed_store_empty_obat",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "",
+                    "price": 0,
+                    "images": [],
+                    "stock": 20,
+                    "description": "",
+                    "product_origin": "",
+                    "dimention": "Cair",
+                    "weight": 100,
+                    "color": "100",
+                    "color_1": "",
+                    "category": ""
+                },
+                "id_product_type": 5
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc25_success_store_obat_with_name_contains_numeric_symbol",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Minyak Karo12!",
+                    "price": 25000,
+                    "images": ["minyak-param.jpeg"],
+                    "stock": 20,
+                    "description": "Berkhasiat Ampuh!",
+                    "product_origin": "Toba Samosir",
+                    "dimention": "Cair",
+                    "weight": 100,
+                    "color": "100",
+                    "color_1": "",
+                    "category": ""
+                },
+                "id_product_type": 5
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Minyak Karo12!",
+                "price": 25000,
+                "images": "[\"minyak-param.jpeg\"]",
+                "stock": 20,
+                "description": "Berkhasiat Ampuh!",
+                "specification": "{\"jenis\":\"Cair\",\"weight\":100}",
+                "asal": "Toba Samosir",
+                "color": "100",
+                "category": "-",
+                "sold": 0,
+                "cat_product": "obat"
+            }
+        }
+    },
+    {
+        "test_name": "tc26_success_store_obat_with_dimention_padat",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Procold",
+                    "price": 4000,
+                    "images": ["procold.jpeg"],
+                    "stock": 1757,
+                    "description": "Membantu meredakan gejala flu.",
+                    "product_origin": "Toba Samosir",
+                    "dimention": "Padat",
+                    "weight": 8,
+                    "color": "",
+                    "color_1": "Blister @ 6 kaplet",
+                    "category": ""
+                },
+                "id_product_type": 5
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Procold",
+                "price": 4000,
+                "images": "[\"procold.jpeg\"]",
+                "stock": 1757,
+                "description": "Membantu meredakan gejala flu.",
+                "specification": "{\"jenis\":\"Padat\",\"weight\":8}",
+                "asal": "Toba Samosir",
+                "color": "Blister @ 6 kaplet",
+                "category": "-",
+                "sold": 0,
+                "cat_product": "obat"
+            }
+        }
+    },
+    {
+        "test_name": "tc27_success_store_obat_with_dimention_padat_name_uppercases",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "PROCOLD",
+                    "price": 4000,
+                    "images": ["procold.jpeg"],
+                    "stock": 1757,
+                    "description": "Membantu meredakan gejala flu.",
+                    "product_origin": "Toba Samosir",
+                    "dimention": "Padat",
+                    "weight": 8,
+                    "color": "",
+                    "color_1": "Blister @ 6 kaplet",
+                    "category": ""
+                },
+                "id_product_type": 5
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "PROCOLD",
+                "price": 4000,
+                "images": "[\"procold.jpeg\"]",
+                "stock": 1757,
+                "description": "Membantu meredakan gejala flu.",
+                "specification": "{\"jenis\":\"Padat\",\"weight\":8}",
+                "asal": "Toba Samosir",
+                "color": "Blister @ 6 kaplet",
+                "category": "-",
+                "sold": 0,
+                "cat_product": "obat"
+            }
+        }
+    },
+    {
+        "test_name": "tc28_success_store_obat_with_dimention_padat_contains_uppercases_number",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "PROCOLD 123",
+                    "price": 4000,
+                    "images": ["procold.jpeg"],
+                    "stock": 1757,
+                    "description": "MEMBANTU MEREDAKAN GEJALA FLU.",
+                    "product_origin": "Toba Samosir",
+                    "dimention": "Padat",
+                    "weight": 8,
+                    "color": "",
+                    "color_1": "Blister @ 6 kaplet",
+                    "category": ""
+                },
+                "id_product_type": 5
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "PROCOLD 123",
+                "price": 4000,
+                "images": "[\"procold.jpeg\"]",
+                "stock": 1757,
+                "description": "MEMBANTU MEREDAKAN GEJALA FLU.",
+                "specification": "{\"jenis\":\"Padat\",\"weight\":8}",
+                "asal": "Toba Samosir",
+                "color": "Blister @ 6 kaplet",
+                "category": "-",
+                "sold": 0,
+                "cat_product": "obat"
+            }
+        }
+    },
+    {
+        "test_name": "tc29_failed_store_empty_obat_with_dimention_padat",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "",
+                    "price": 0,
+                    "images": [],
+                    "stock": 0,
+                    "description": "",
+                    "product_origin": "",
+                    "dimention": "Padat",
+                    "weight": 0,
+                    "color": "",
+                    "color_1": "",
+                    "category": ""
+                },
+                "id_product_type": 5
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc30_failed_store_obat_with_dimention_padat_merchant_not_authenticated",
+        "test_data": {
+            "merchant": null,
+            "request": {
+                "product": {
+                    "name": "Procold",
+                    "price": 4000,
+                    "images": ["procold.jpeg"],
+                    "stock": 1757,
+                    "description": "Membantu meredakan gejala flu.",
+                    "product_origin": "Toba Samosir",
+                    "dimention": "Padat",
+                    "weight": 8,
+                    "color": "",
+                    "color_1": "Blister @ 6 kaplet",
+                    "category": ""
+                },
+                "id_product_type": 5
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc31_success_store_ulos_with_name_symbol_numeric ",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "ulossadum_123",
+                    "price": 70000,
+                    "images": ["1601342622ulos.jpeg"],
+                    "stock": 15,
+                    "description": "Ulos Sadum dimaknai oleh suku Batak sebagai simbol suka cita sebagai pertanda motifasi penyemangat dalam suatu keluarga agar tetap bersuka cita melakukan segala aktifitas sehari-hari.",
+                    "product_origin": "Pollung",
+                    "dimention": "200cm x 70cm",
+                    "weight": 300,
+                    "color": "Merah",
+                    "category": "Mesin"
+                },
+                "id_product_type": 1   
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "ulossadum_123",
+                "price": 70000,
+                "images": "[\"1601342622ulos.jpeg\"]",
+                "stock": 15,
+                "description": "Ulos Sadum dimaknai oleh suku Batak sebagai simbol suka cita sebagai pertanda motifasi penyemangat dalam suatu keluarga agar tetap bersuka cita melakukan segala aktifitas sehari-hari.",
+                "specification": "{\"dimention\":\"200cm x 70cm\",\"weight\":300}",
+                "asal": "Pollung",
+                "color": "Merah",
+                "category": "Mesin",
+                "sold": 0,
+                "cat_product": "ulos"
+            }
+        }
+    },
+    {
+        "test_name": "tc32_success_store_ulos_with_description with symbol ",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "ulos sadum",
+                    "price": 70000,
+                    "images": ["1601342622ulos.jpeg"],
+                    "stock": 15,
+                    "description": "hangat_dan _nyaman",
+                    "product_origin": "Pollung",
+                    "dimention": "200cm x 70cm",
+                    "weight": 300,
+                    "color": "Merah",
+                    "category": "Mesin"
+                },
+                "id_product_type": 1
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "ulos sadum",
+                "price": 70000,
+                "images": "[\"1601342622ulos.jpeg\"]",
+                "stock": 15,
+                "description": "hangat_dan _nyaman",
+                "specification": "{\"dimention\":\"200cm x 70cm\",\"weight\":300}",
+                "asal": "Pollung",
+                "color": "Merah",
+                "category": "Mesin",
+                "sold": 0,
+                "cat_product": "ulos"
+            }
+        }
+    },
+    {
+        "test_name": "tc33_success_store_ulos_with_name_desc_asal_uppercase",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "ULOS SADUM",
+                    "price": 70000,
+                    "images": ["1601342622ulos.jpeg"],
+                    "stock": 15,
+                    "description": "HANGAT DAN NYAMAN",
+                    "product_origin": "MEDAN",
+                    "dimention": "200cm x 70cm",
+                    "weight": 300,
+                    "color": "Merah",
+                    "category": "Mesin"
+                },
+                "id_product_type": 1
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "ULOS SADUM",
+                "price": 70000,
+                "images": "[\"1601342622ulos.jpeg\"]",
+                "stock": 15,
+                "description": "HANGAT DAN NYAMAN",
+                "specification": "{\"dimention\":\"200cm x 70cm\",\"weight\":300}",
+                "asal": "MEDAN",
+                "color": "Merah",
+                "category": "Mesin",
+                "sold": 0,
+                "cat_product": "ulos"
+            }
+        }
+    },
+    {
+        "test_name": "tc34_success_store_ulos_with_name_desc_asal_uppercase_with_numeric",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "ULOS SADUM no 54",
+                    "price": 70000,
+                    "images": ["1601342622ulos.jpeg"],
+                    "stock": 15,
+                    "description": "HANG4T ",
+                    "product_origin": "M3DAN 4REA",
+                    "dimention": "200cm x 70cm",
+                    "weight": 300,
+                    "color": "Merah",
+                    "category": "Mesin"
+                },
+                "id_product_type": 1
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "ULOS SADUM no 54",
+                "price": 70000,
+                "images": "[\"1601342622ulos.jpeg\"]",
+                "stock": 15,
+                "description": "HANG4T",
+                "specification": "{\"dimention\":\"200cm x 70cm\",\"weight\":300}",
+                "asal": "M3DAN 4REA",
+                "color": "Merah",
+                "category": "Mesin",
+                "sold": 0,
+                "cat_product": "ulos"
+            }
+        }
+    },
+    {
+        "test_name": "tc35_success_store_ulos_with_desc_uppercase_with_symbol",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "ULOS_PUCCA",
+                    "price": 70000,
+                    "images": ["1601342622ulos.jpeg"],
+                    "stock": 15,
+                    "description": "NYAMAN_DIPAKAI",
+                    "product_origin": "TOBA_SAMOSIR",
+                    "dimention": "200cm x 70cm",
+                    "weight": 300,
+                    "color": "Merah",
+                    "category": "Mesin"
+                },
+                "id_product_type": 1
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "ULOS_PUCCA",
+                "price": 70000,
+                "images": "[\"1601342622ulos.jpeg\"]",
+                "stock": 15,
+                "description": "NYAMAN_DIPAKAI",
+                "specification": "{\"dimention\":\"200cm x 70cm\",\"weight\":300}",
+                "asal": "TOBA_SAMOSIR",
+                "color": "Merah",
+                "category": "Mesin",
+                "sold": 0,
+                "cat_product": "ulos"
+            }
+        }
+    },
+    {
+        "test_name": "tc36_success_store_ulos_with_desc_with_symbol_numeric",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "ULOS_PUCCA_123",
+                    "price": 70000,
+                    "images": ["1601342622ulos.jpeg"],
+                    "stock": 15,
+                    "description": "NYAMAN_DIPAKAI_34",
+                    "product_origin": "TOBA_SAMOSIR_45",
+                    "dimention": "200cm x 70cm",
+                    "weight": 300,
+                    "color": "Merah",
+                    "category": "Mesin"
+                },
+                "id_product_type": 1
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "ULOS_PUCCA_123",
+                "price": 70000,
+                "images": "[\"1601342622ulos.jpeg\"]",
+                "stock": 15,
+                "description": "NYAMAN_DIPAKAI_34",
+                "specification": "{\"dimention\":\"200cm x 70cm\",\"weight\":300}",
+                "asal": "TOBA_SAMOSIR_45",
+                "color": "Merah",
+                "category": "Mesin",
+                "sold": 0,
+                "cat_product": "ulos"
+            }
+        }
+    },
+    {
+        "test_name": "tc37_failed_store_ulos_with_usernname_empty",
+        "test_data": {
+            "merchant": {
+                "username": null
+            },
+            "request": {
+                "product": {
+                    "name": "ULOS_PUCCA_123",
+                    "price": 70000,
+                    "images": ["1601342622ulos.jpeg"],
+                    "stock": 15,
+                    "description": "NYAMAN_DIPAKAI_34",
+                    "product_origin": "TOBA_SAMOSIR_45",
+                    "dimention": "200cm x 70cm",
+                    "weight": 300,
+                    "color": "Merah",
+                    "category": "Mesin"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc38_failed_store_ulos_with_empty",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "",
+                    "price": 0,
+                    "images": [],
+                    "stock": 0,
+                    "description": "",
+                    "product_origin": "",
+                    "dimention": "",
+                    "weight": 0,
+                    "color": "",
+                    "category": ""
+                },
+                "id_product_type": 1
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc39_failed_store_ulos_with__empty_required_field_description",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "ULOS_PUCCA_123",
+                    "price": 70000,
+                    "images": ["1601342622ulos.jpeg"],
+                    "stock": 15,
+                    "description": "",
+                    "product_origin": "TOBA_SAMOSIR_45",
+                    "dimention": "200cm x 70cm",
+                    "weight": 300,
+                    "color": "Merah",
+                    "category": "Mesin"
+                },
+                "id_product_type": 1
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc40_success_store_ulos_with_product_origin_uppercases_symbol",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ulos pucca",
+                    "price": 70000,
+                    "images": ["1601342622ulos.jpeg"],
+                    "stock": 15,
+                    "description": "nyaman dipakai",
+                    "product_origin": "TOBA_SAMOSIR_",
+                    "dimention": "200cm x 70cm",
+                    "weight": 300,
+                    "color": "Merah",
+                    "category": "Mesin"
+                },
+                "id_product_type": 1
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Ulos pucca",
+                "price": 70000,
+                "images": "[\"1601342622ulos.jpeg\"]",
+                "stock": 15,
+                "description": "nyaman dipakai",
+                "specification": "{\"dimention\":\"200cm x 70cm\",\"weight\":300}",
+                "asal": "TOBA_SAMOSIR_",
+                "color": "Merah",
+                "category": "Mesin",
+                "sold": 0,
+                "cat_product": "ulos"
+            }
+        }
+    },
+    {
+        "test_name": "tc41_failed_store_ulos_with_product_empty",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ulos pucca",
+                    "price": 70000,
+                    "images": ["1601342622ulos.jpeg"],
+                    "stock": 15,
+                    "description": "nyaman dipakai",
+                    "product_origin": "",
+                    "dimention": "200cm x 70cm",
+                    "weight": 300,
+                    "color": "Merah",
+                    "category": "Mesin"
+                },
+                "id_product_type": 1
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc42_success_store_ulos_with_product_origin_uppercases_symbol_numeric",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ulos pucca",
+                    "price": 70000,
+                    "images": ["1601342622ulos.jpeg"],
+                    "stock": 15,
+                    "description": "nyaman dipakai",
+                    "product_origin": "BEKASI_BARAT_20",
+                    "dimention": "200cm x 70cm",
+                    "weight": 300,
+                    "color": "Merah",
+                    "category": "Mesin"
+                },
+                "id_product_type": 1
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Ulos pucca",
+                "price": 70000,
+                "images": "[\"1601342622ulos.jpeg\"]",
+                "stock": 15,
+                "description": "nyaman dipakai",
+                "specification": "{\"dimention\":\"200cm x 70cm\",\"weight\":300}",
+                "asal": "BEKASI_BARAT_20",
+                "color": "Merah",
+                "category": "Mesin",
+                "sold": 0,
+                "cat_product": "ulos"
+            }
+        }
+    },
+    {
+        "test_name": "tc43_failed_store_ulos_with_price_stock_empty",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ulos pucca",
+                    "price": 0,
+                    "images": ["1601342622ulos.jpeg"],
+                    "stock": 0,
+                    "description": "nyaman dipakai",
+                    "product_origin": "",
+                    "dimention": "200cm x 70cm",
+                    "weight": 300,
+                    "color": "Merah",
+                    "category": "Mesin"
+                },
+                "id_product_type": 1
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc44_success_store_ulos_with_numeric_symbol",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "123_123",
+                    "price": 70000,
+                    "images": ["1601342622ulos.jpeg"],
+                    "stock": 15,
+                    "description": "123_123",
+                    "product_origin": "123_123",
+                    "dimention": "200cm x 70cm",
+                    "weight": 300,
+                    "color": "Merah",
+                    "category": "Mesin"
+                },
+                "id_product_type": 1
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "123_123",
+                "price": 70000,
+                "images": "[\"1601342622ulos.jpeg\"]",
+                "stock": 15,
+                "description": "123_123",
+                "specification": "{\"dimention\":\"200cm x 70cm\",\"weight\":300}",
+                "asal": "123_123",
+                "color": "Merah",
+                "category": "Mesin",
+                "sold": 0,
+                "cat_product": "ulos"
+            }
+        }
+    },
+    {
+        "test_name": "tc45_failed_store_ulos_with_color_category_empty ",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "ulos sadum",
+                    "price": 70000,
+                    "images": ["1601342622ulos.jpeg"],
+                    "stock": 15,
+                    "description": "hangat_dan _nyaman",
+                    "product_origin": "Pollung",
+                    "dimention": "200cm x 70cm",
+                    "weight": 300,
+                    "color": "",
+                    "category": ""
+                },
+                "id_product_type": 1
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc46_failed_store_ulos_with_name_image_empty ",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "",
+                    "price": 70000,
+                    "images": [],
+                    "stock": 15,
+                    "description": "hangat_dan _nyaman",
+                    "product_origin": "Pollung",
+                    "dimention": "200cm x 70cm",
+                    "weight": 300,
+                    "color": "Hitam",
+                    "category": "Mesin"
+                },
+                "id_product_type": 1
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc47_success_store_pakaian",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Noke Papua123",
+                    "price": 30000,
+                    "images": ["nok#$e-papua.jpeg"],
+                    "stock": 2,
+                    "description": "Noken13221312buatan orang papua untuk tas laptop dan buku.",
+                    "product_origin": "Toli#%%kara",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Biru",
+                    "category": "Pria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Noke Papua123",
+                "price": 30000,
+                "images": ["nok#$e-papua.jpeg"],
+                "stock": 2,
+                "description": "Noken13221312buatan orang papua untuk tas laptop dan buku.",
+                "specification": "{\"size\":\"M\",\"weight\":20}",
+                "asal": "Toli#%%kara",
+                "color": "Biru",
+                "category": "Pria",
+                "sold": 0,
+                "cat_product": "pakaian"
+            }
+        }
+    },
+    {
+        "test_name": "tc48_success_store_pakaian",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Noke Papua$%%%",
+                    "price": 30000,
+                    "images": ["nok12312312e-papua.jpeg"],
+                    "stock": 2,
+                    "description": "Noken%%%%%buatan orang papua untuk tas laptop dan buku.",
+                    "product_origin": "Toli123kara",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Biru",
+                    "category": "Pria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Noke Papua$%%%",
+                "price": 30000,
+                "images": ["nok12312312e-papua.jpeg"],
+                "stock": 2,
+                "description": "Noken%%%%%buatan orang papua untuk tas laptop dan buku.",
+                "specification": "{\"size\":\"M\",\"weight\":20}",
+                "asal": "Toli123kara",
+                "color": "Biru",
+                "category": "Pria",
+                "sold": 0,
+                "cat_product": "pakaian"
+            }
+        }
+    },
+    {
+        "test_name": "tc49_success_store_pakaian",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "NOKE PAPUA!++++!",
+                    "price": 30000,
+                    "images": ["noke-pap??ua.jpeg"],
+                    "stock": 2,
+                    "description": "NOKEN BUAT34543543AN ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                    "product_origin": "TOLIK43534ARA",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Biru",
+                    "category": "Pria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "NOKE PAPUA!++++!",
+                "price": 30000,
+                "images": ["noke-pap??ua.jpeg"],
+                "stock": 2,
+                "description": "NOKEN BUAT34543543AN ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                "specification": "{\"size\":\"M\",\"weight\":20}",
+                "asal": "TOLIK43534ARA",
+                "color": "Biru",
+                "category": "Pria",
+                "sold": 0,
+                "cat_product": "pakaian"
+            }
+        }
+    },
+    {
+        "test_name": "tc50_failed_store_pakaian_with_empty_required_field_name",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "",
+                    "price": 30000,
+                    "images": ["noke-papua.jpeg"],
+                    "stock": 2,
+                    "description": "Pakaian bagus",
+                    "product_origin": "Tolikara",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Biru",
+                    "category": "Pria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc51_failed_store_pakaian_with_empty_required_field_image",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Noke Papua",
+                    "price": 30000,
+                    "images": [""],
+                    "stock": 2,
+                    "description": "Pakaian bagus",
+                    "product_origin": "Tolikara",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Biru",
+                    "category": "Pria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc52_success_store_pakaian",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "NOKE PAPUA####!!",
+                    "price": 30000,
+                    "images": ["noke-pa4444pua.jpeg"],
+                    "stock": 2,
+                    "description": "NOKEN BUATAN32432432 ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                    "product_origin": "TOLIK23423423ARA",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Biru",
+                    "category": "Pria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "NOKE PAPUA####!!",
+                "price": 30000,
+                "images": ["noke-pa4444pua.jpeg"],
+                "stock": 2,
+                "description": "NOKEN BUATAN32432432 ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                "specification": "{\"size\":\"M\",\"weight\":20}",
+                "asal": "TOLIK23423423ARA",
+                "color": "Biru",
+                "category": "Pria",
+                "sold": 0,
+                "cat_product": "pakaian"
+            }
+        }
+    },
+    {
+        "test_name": "tc53_success_store_pakaian",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "NOKE PAPUA####!!",
+                    "price": 30000,
+                    "images": ["noke-pa)))))))pua.jpeg"],
+                    "stock": 2,
+                    "description": "NOKEN BUATAN32432432 ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                    "product_origin": "TOLIK23423423ARA",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Biru",
+                    "category": "Pria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "NOKE PAPUA####!!",
+                "price": 30000,
+                "images": ["noke-pa)))))))pua.jpeg"],
+                "stock": 2,
+                "description": "NOKEN BUATAN32432432 ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                "specification": "{\"size\":\"M\",\"weight\":20}",
+                "asal": "TOLIK23423423ARA",
+                "color": "Biru",
+                "category": "Pria",
+                "sold": 0,
+                "cat_product": "pakaian"
+            }
+        }
+    },
+    {
+        "test_name": "tc54_success_store_pakaian",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "NOKE PAPUA####!!",
+                    "price": 30000,
+                    "images": ["noke-pa)))))))pua.jpeg"],
+                    "stock": 2,
+                    "description": "NOKEN BUATAN %%%%%%%%%%%%%% ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                    "product_origin": "TOLIK23423423ARA",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Biru",
+                    "category": "Pria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "NOKE PAPUA####!!",
+                "price": 30000,
+                "images": ["noke-pa)))))))pua.jpeg"],
+                "stock": 2,
+                "description": "NOKEN BUATAN %%%%%%%%%%%%%% ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                "specification": "{\"size\":\"M\",\"weight\":20}",
+                "asal": "TOLIK23423423ARA",
+                "color": "Biru",
+                "category": "Pria",
+                "sold": 0,
+                "cat_product": "pakaian"
+            }
+        }
+    },
+    {
+        "test_name": "tc55_success_store_pakaian",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "NOKE PAPUA####!!",
+                    "price": 30000,
+                    "images": ["noke-pa)))))))pua.jpeg"],
+                    "stock": 2,
+                    "description": "NOKEN BUATAN %%%%%%%%%%%%%% ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                    "product_origin": "TOLIKARA>>>>>>>>>>",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Biru",
+                    "category": "Pria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "NOKE PAPUA####!!",
+                "price": 30000,
+                "images": ["noke-pa)))))))pua.jpeg"],
+                "stock": 2,
+                "description": "NOKEN BUATAN %%%%%%%%%%%%%% ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                "specification": "{\"size\":\"M\",\"weight\":20}",
+                "product_origin": "TOLIKARA>>>>>>>>>>",
+                "color": "Biru",
+                "category": "Pria",
+                "sold": 0,
+                "cat_product": "pakaian"
+            }
+        }
+    },
+    {
+        "test_name": "tc56_success_store_pakaian",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "NOKE PAPUA123444",
+                    "price": 30000,
+                    "images": ["noke-pa)))))))pua.jpeg"],
+                    "stock": 2,
+                    "description": "NOKEN BUATAN %%%%%%%%%%%%%% ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                    "product_origin": "TOLIKARA>>>>>>>>>>",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Biru",
+                    "category": "Pria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "NOKE PAPUA123444",
+                "price": 30000,
+                "images": ["noke-pa)))))))pua.jpeg"],
+                "stock": 2,
+                "description": "NOKEN BUATAN %%%%%%%%%%%%%% ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                "specification": "{\"size\":\"M\",\"weight\":20}",
+                "product_origin": "TOLIKARA>>>>>>>>>>",
+                "color": "Biru",
+                "category": "Pria",
+                "sold": 0,
+                "cat_product": "pakaian"
+            }
+        }
+    },
+    {
+        "test_name": "tc57_success_store_pakaian",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "NOKE PAPUA12SDFDSFSD3444",
+                    "price": 30000,
+                    "images": ["noke-paSDFSDKHFSDKFSJDFDSJKFSDKpua.jpeg"],
+                    "stock": 2,
+                    "description": "NOKEN BUATAN ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                    "product_origin": "TOLIKARA>>>>>>>>>>",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Biru",
+                    "category": "Pria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "NOKE PAPUA12SDFDSFSD3444",
+                "price": 30000,
+                "images": ["noke-paSDFSDKHFSDKFSJDFDSJKFSDKpua.jpeg"],
+                "stock": 2,
+                "description": "NOKEN BUATAN %%%%%%%%%%%%%% ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                "specification": "{\"size\":\"M\",\"weight\":20}",
+                "product_origin": "TOLIKARA>>>>>>>>>>",
+                "color": "Biru",
+                "category": "Pria",
+                "sold": 0,
+                "cat_product": "pakaian"
+            }
+        }
+    },
+    {
+        "test_name": "tc58_success_store_pakaian",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "NOKE PAPUA12SDFDSFSD3444",
+                    "price": 30000,
+                    "images": ["noke-paSDFSDKHFSDKFSJDFDSJKFSDKpua.jpeg"],
+                    "stock": 2,
+                    "description": "NOKEN BUATAN ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                    "product_origin": "TOLIKARAfdsfdsfds3454354355>>>>>>>>>>",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Biru",
+                    "category": "Pria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "NOKE PAPUA12SDFDSFSD3444",
+                "price": 30000,
+                "images": ["noke-paSDFSDKHFSDKFSJDFDSJKFSDKpua.jpeg"],
+                "stock": 2,
+                "description": "NOKEN BUATAN %%%%%%%%%%%%%% ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                "specification": "{\"size\":\"M\",\"weight\":20}",
+                "product_origin": "TOLIKARAfdsfdsfds3454354355>>>>>>>>>>",
+                "color": "Biru",
+                "category": "Pria",
+                "sold": 0,
+                "cat_product": "pakaian"
+            }
+        }
+    },
+    {
+        "test_name": "tc59_success_store_pakaian_with_symbol",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "NOKE$$$PAPUA123!",
+                    "price": 234343,
+                    "images": ["noke-324$%papua.jpeg"],
+                    "stock": 2,
+                    "description": "NOKEN %%%%%BUATAN ORANG----() PAPUAN UNTUK TAS DAN LAPTOP.",
+                    "product_origin": "TOLIK=-$ARA",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Biru",
+                    "category": "Pria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "NOKE$$$PAPUA123!",
+                "price": 2343243,
+                "images": ["noke-324$%papua.jpeg"],
+                "stock": 2,
+                "description": "NOKEN %%%%%BUATAN ORANG----() PAPUAN UNTUK TAS DAN LAPTOP.",
+                "specification": "{\"size\":\"M\",\"weight\":20}",
+                "asal": "TOLIK=-$ARA",
+                "color": "Biru",
+                "category": "Pria",
+                "sold": 0,
+                "cat_product": "pakaian"
+            }
+        }
+    },
+    {
+        "test_name": "tc60_success_store_pakaian_with_number",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "NOKE123PAPUA!!",
+                    "price": 30000,
+                    "images": ["noke-p23432423423apua.jpeg"],
+                    "stock": 2,
+                    "description": "NOKEN BUATAN23432432423ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                    "product_origin": "TOLI23432434KARA",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Biru",
+                    "category": "Pria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "NOKE123PAPUA!!",
+                "price": 30000,
+                "images": ["noke-p23432423423apua.jpeg"],
+                "stock": 2,
+                "description": "NOKEN BUATAN23432432423ORANG PAPUAN UNTUK TAS DAN LAPTOP.",
+                "specification": "{\"size\":\"M\",\"weight\":20}",
+                "asal": "TOLI23432434KARA",
+                "color": "Biru",
+                "category": "Pria",
+                "sold": 0,
+                "cat_product": "pakaian"
+            }
+        }
+    },
+    {
+        "test_name": "tc61",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Noke#%2Papua",
+                    "price": 30000,
+                    "images": ["noke-pap#%2ua.jpeg"],
+                    "stock": 2,
+                    "description": "Noken buatan#%2orang papua untuk tas laptop dan buku.",
+                    "product_origin": "Tolik#%2ara",
+                    "dimention": "M",
+                    "weight": 20,
+                    "color": "Bi#%2ru",
+                    "category": "P#%2ria"
+                },
+                "id_product_type": 2
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Noke#%2Papua",
+                "price": 30000,
+                "images": ["noke-pap#%2ua.jpeg"],
+                "stock": 2,
+                "description": "Noken buatan#%2orang papua untuk tas laptop dan buku.",
+                "specification": "{\"size\":\"M\",\"weight\":20}",
+                "asal": "Tolik#%2ara",
+                "color": "Biru",
+                "category": "Pria",
+                "sold": 0,
+                "cat_product": "pakaian"
+            }
+        }
+    },
+    {
+        "test_name": "tc62_success_store_aksesoris",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Tas Pakkat123",
+                    "price": 50000,
+                    "images": ["tas123-pakkat.jpeg"],
+                    "stock": 100,
+                    "description": "Bah123an dasar dari rotan dan bambu.",
+                    "product_origin": "T123oba Samosir",
+                    "dimention": "Sedang",
+                    "weight": 1,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Tas Pakkat123",
+                "price": 50000,
+                "images": ["tas123-pakkat.jpeg"],
+                "stock": 100,
+                "description": "Bah123an dasar dari rotan dan bambu.",
+                "specification": "{\"size\":\"Sedang\",\"weight\":1}",
+                "asal": "T123oba Samosir",
+                "color": "Hitam",
+                "category": "Buatan Tangan",
+                "sold": 0,
+                "cat_product": "aksesoris"
+            }
+        }
+    },
+    {
+       "test_name": "tc63_failed_store_empty_name",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "",
+                    "price": 50000,
+                    "images": ["tas-pakkat.jpeg"],
+                    "stock": 100,
+                    "description": "BAHAN DASAR DARI ROTAN DAN BAMBU.",
+                    "product_origin": "TOBA SAMOSIR",
+                    "dimention": "SEDANG",
+                    "weight": 1,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc64_failed_store_empty_price",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "TAS PAKKAT",
+                    "price": "",
+                    "images": ["tas-pakkat.jpeg"],
+                    "stock": 100,
+                    "description": "BAHAN DASAR DARI ROTAN DAN BAMBU.",
+                    "product_origin": "TOBA SAMOSIR",
+                    "dimention": "SEDANG",
+                    "weight": 1,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc65_failed_store_empty_images",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "TAS PAKKAT",
+                    "price": "20000",
+                    "images": [""],
+                    "stock": 100,
+                    "description": "BAHAN DASAR DARI ROTAN DAN BAMBU.",
+                    "product_origin": "TOBA SAMOSIR",
+                    "dimention": "SEDANG",
+                    "weight": 1,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc66_failed_store_empty_description",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "TAS PAKKAT",
+                    "price": "20000",
+                    "images": ["tas-pakkat.jpeg"],
+                    "stock": 100,
+                    "description": "",
+                    "product_origin": "TOBA SAMOSIR",
+                    "dimention": "SEDANG",
+                    "weight": 1,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": null
+        }
+    },
+    {
+        "test_name": "tc67_success_store_aksesoris",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "TAS PAKKA$$$$$$$T4G!",
+                    "price": 50000,
+                    "images": ["tas-$$$$$$$$$pakkat.jpeg"],
+                    "stock": 100,
+                    "description": "BAHAN DASAR DAR$$$$$$$I ROTAN DAN BAMBU.",
+                    "product_origin": "TOBA SA%%%%%%%%MOSIR",
+                    "dimention": "SEDANG",
+                    "weight": 1,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "TAS PAKKA$$$$$$$T4G!",
+                "price": 50000,
+                "images": ["tas-$$$$$$$$$pakkat.jpeg"],
+                "stock": 100,
+                "description": "BAHAN DASAR DAR$$$$$$$I ROTAN DAN BAMBU.",
+                "specification": "{\"size\":\"SEDANG\",\"weight\":1}",
+                "asal": "TOBA SA%%%%%%%%MOSIR",
+                "color": "Hitam",
+                "category": "Buatan Tangan",
+                "sold": 0,
+                "cat_product": "aksesoris"
+            }
+        }
+    },
+    {
+        "test_name": "tc68_success_store_aksesoris",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "TAS PAKKAT4G!",
+                    "price": 50000,
+                    "images": ["tas-pa%%%%%%kkat.jpeg"],
+                    "stock": 100,
+                    "description": "BAHAN DASAR DARI ROTAN DAN BAMBU.",
+                    "product_origin": "TOBA SAMOSIR",
+                    "dimention": "SEDANG",
+                    "weight": 1,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "TAS PAKKAT4G!",
+                "price": 50000,
+                "images": ["tas-pa%%%%%%kkat.jpeg"],
+                "stock": 100,
+                "description": "BAHAN DASAR DARI ROTAN DAN BAMBU.",
+                "specification": "{\"size\":\"SEDANG\",\"weight\":1}",
+                "asal": "TOBA SAMOSIR",
+                "color": "Hitam",
+                "category": "Buatan Tangan",
+                "sold": 0,
+                "cat_product": "aksesoris"
+            }
+        }
+    },
+    {
+        "test_name": "tc69_success_store_aksesoris",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "TAS PAKKAT4G!",
+                    "price": 50000,
+                    "images": ["tas-pa%%%%%%kkat.jpeg"],
+                    "stock": 100,
+                    "description": "BAHAN DAS$$$$$$$$$$$AR DARI ROTAN DAN BAMBU.",
+                    "product_origin": "TOBA SAMOSIR",
+                    "dimention": "SEDANG",
+                    "weight": 1,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "TAS PAKKAT4G!",
+                "price": 50000,
+                "images": ["tas-pa%%%%%%kkat.jpeg"],
+                "stock": 100,
+                "description": "BAHAN DAS$$$$$$$$$$$AR DARI ROTAN DAN BAMBU.",
+                "specification": "{\"size\":\"SEDANG\",\"weight\":1}",
+                "asal": "TOBA SAMOSIR",
+                "color": "Hitam",
+                "category": "Buatan Tangan",
+                "sold": 0,
+                "cat_product": "aksesoris"
+            }
+        }
+    },
+    {
+        "test_name": "tc70_success_store_aksesoris",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "TAS PAKKAT4G!",
+                    "price": 50000,
+                    "images": ["tas-pa%%%%%%kkat.jpeg"],
+                    "stock": 100,
+                    "description": "BAHAN DAS$$$$$$$$$$$AR DARI ROTAN DAN BAMBU.",
+                    "product_origin": "TOBA SAM$$$$$$$$$$OSIR",
+                    "dimention": "SEDANG",
+                    "weight": 1,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "TAS PAKKAT4G!",
+                "price": 50000,
+                "images": ["tas-pa%%%%%%kkat.jpeg"],
+                "stock": 100,
+                "description": "BAHAN DAS$$$$$$$$$$$AR DARI ROTAN DAN BAMBU.",
+                "specification": "{\"size\":\"SEDANG\",\"weight\":1}",
+                "asal": "TOBA SAM$$$$$$$$$$OSIR",
+                "color": "Hitam",
+                "category": "Buatan Tangan",
+                "sold": 0,
+                "cat_product": "aksesoris"
+            }
+        }
+    },
+    {
+        "test_name": "tc71_success_store_aksesoris",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "TAS PAK3244444444444fdgddfgdfgdfgfdgdfKAT4G!",
+                    "price": 50000,
+                    "images": ["tas-pakkat.jpeg"],
+                    "stock": 100,
+                    "description": "BAHAN DASAR DARI ROTAN DAN BAMBU.",
+                    "product_origin": "TOBA SAMOSIR",
+                    "dimention": "SEDANG",
+                    "weight": 1,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "TAS PAK3244444444444fdgddfgdfgdfgfdgdfKAT4G!",
+                "price": 50000,
+                "images": "[\"tas-pakkat.jpeg\"]",
+                "stock": 100,
+                "description": "BAHAN DASAR DARI ROTAN DAN BAMBU.",
+                "specification": "{\"size\":\"SEDANG\",\"weight\":1}",
+                "asal": "TOBA SAMOSIR",
+                "color": "Hitam",
+                "category": "Buatan Tangan",
+                "sold": 0,
+                "cat_product": "aksesoris"
+            }
+        }
+    },
+    {
+        "test_name": "tc72_success_store_aksesoris",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "TAS PAK3244444444444fdgddfgdfgdfgfdgdfKAT4G!",
+                    "price": 50000,
+                    "images": ["tas-paksadsadasd34543543543DFGHDFFGDFGFD          kat.jpeg"],
+                    "stock": 100,
+                    "description": "BAHAN DASAR DARI ROTAN DAN BAMBU.",
+                    "product_origin": "TOBA SAMOSIR",
+                    "dimention": "SEDANG",
+                    "weight": 1,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "TAS PAK3244444444444fdgddfgdfgdfgfdgdfKAT4G!",
+                "price": 50000,
+                "images": "[\"tas-paksadsadasd34543543543DFGHDFFGDFGFD          kat.jpeg\"]",
+                "stock": 100,
+                "description": "BAHAN DASAR DARI ROTAN DAN BAMBU.",
+                "specification": "{\"size\":\"SEDANG\",\"weight\":1}",
+                "asal": "TOBA SAMOSIR",
+                "color": "Hitam",
+                "category": "Buatan Tangan",
+                "sold": 0,
+                "cat_product": "aksesoris"
+            }
+        }
+    },
+    {
+        "test_name": "tc73_success_store_aksesoris",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "TAS PAK3244444444444fdgddfgdfgdfgfdgdfKAT4G!",
+                    "price": 50000,
+                    "images": ["tas-paksadsadasd34543543543DFGHDFFGDFGFD          kat.jpeg"],
+                    "stock": 100,
+                    "description": "BAHAN DASAR dsfsddsf34543534543 v^^^^^DARI ROTAN DAN BAMBU.",
+                    "product_origin": "TOBA SAMOSIR",
+                    "dimention": "SEDANG",
+                    "weight": 1,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "TAS PAK3244444444444fdgddfgdfgdfgfdgdfKAT4G!",
+                "price": 50000,
+                "images": "[\"tas-paksadsadasd34543543543DFGHDFFGDFGFD          kat.jpeg\"]",
+                "stock": 100,
+                "description": "BAHAN DASAR dsfsddsf34543534543 v^^^^^DARI ROTAN DAN BAMBU.",
+                "specification": "{\"size\":\"SEDANG\",\"weight\":1}",
+                "asal": "TOBA SAMOSIR",
+                "color": "Hitam",
+                "category": "Buatan Tangan",
+                "sold": 0,
+                "cat_product": "aksesoris"
+            }
+        }
+    },
+    {
+        "test_name": "tc74_success_store_aksesoris",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Tas P12321312312321321akkat",
+                    "price": 50000,
+                    "images": ["tas-pakkat.jpeg"],
+                    "stock": 100,
+                    "description": "Bahan dasar dari rotan dan bambu.",
+                    "product_origin": "Toba Samosir",
+                    "dimention": "Sedang",
+                    "weight": 1,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Tas P12321312312321321akkat",
+                "price": 50000,
+                "images": "[\"tas-pakkat.jpeg\"]",
+                "stock": 100,
+                "description": "Bahan dasar dari rotan dan bambu.",
+                "specification": "{\"size\":\"Sedang\",\"weight\":1}",
+                "asal": "Toba Samosir",
+                "color": "Hitam",
+                "category": "Buatan Tangan",
+                "sold": 0,
+                "cat_product": "aksesoris"
+            }
+        }
+    },
+    {
+        "test_name": "tc75_success_store_aksesoris",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Tas P12321312312321321akkat",
+                    "price": 50000,
+                    "images": ["tas-pakkdsadada234234324324324sdsadasat.jpeg"],
+                    "stock": 100,
+                    "description": "Bahan dasar dari rotan dan bambu.",
+                    "product_origin": "Toba Samosir",
+                    "dimention": "Sedang",
+                    "weight": 1,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Tas P12321312312321321akkat",
+                "price": 50000,
+                "images": "[\"tas-pakkdsadada234234324324324sdsadasat.jpeg\"]",
+                "stock": 100,
+                "description": "Bahan dasar dari rotan dan bambu.",
+                "specification": "{\"size\":\"Sedang\",\"weight\":1}",
+                "asal": "Toba Samosir",
+                "color": "Hitam",
+                "category": "Buatan Tangan",
+                "sold": 0,
+                "cat_product": "aksesoris"
+            }
+        }
+    },
+    {
+        "test_name": "tc76_success_store_aksesoris",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Tas P12321312312321321akkat",
+                    "price": 50000,
+                    "images": ["tas-pakkdsadada234234324324324sdsadasat.jpeg"],
+                    "stock": 100,
+                    "description": "Bahan dasar d23423423423423423432ari rotan dan bambu.",
+                    "product_origin": "Toba Samosir",
+                    "dimention": "Sedang",
+                    "weight": 1,
+                    "color": "Hitam",
+                    "category": "Buatan Tangan"
+                },
+                "id_product_type": 4
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Tas P12321312312321321akkat",
+                "price": 50000,
+                "images": "[\"tas-pakkdsadada234234324324324sdsadasat.jpeg\"]",
+                "stock": 100,
+                "description": "Bahan dasar d23423423423423423432ari rotan dan bambu.",
+                "specification": "{\"size\":\"Sedang\",\"weight\":1}",
+                "asal": "Toba Samosir",
+                "color": "Hitam",
+                "category": "Buatan Tangan",
+                "sold": 0,
+                "cat_product": "aksesoris"
+            }
+        }
+    },
+    {
+        "test_name": "tc77_success_store_obat_with_color_1_numeric",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "PROCOLD 123",
+                    "price": 4000,
+                    "images": ["procold.jpeg"],
+                    "stock": 1757,
+                    "description": "MEMBANTU MEREDAKAN GEJALA FLU.",
+                    "product_origin": "Toba Samosir",
+                    "dimention": "Padat",
+                    "weight": 8,
+                    "color": "",
+                    "color_1": "123456789",
+                    "category": ""
+                },
+                "id_product_type": 5
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": {
+                "name": "PROCOLD 123",
+                "price": 4000,
+                "images": "[\"procold.jpeg\"]",
+                "stock": 1757,
+                "description": "MEMBANTU MEREDAKAN GEJALA FLU.",
+                "specification": "{\"jenis\":\"Padat\",\"weight\":8}",
+                "asal": "Toba Samosir",
+                "color": "123456789",
+                "category": "-",
+                "sold": 0,
+                "cat_product": "obat"
+            }
+        }
+    },
+    {
+        "test_name": "tc78_success_store_obat_with_stock_numeric",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "PROCOLD PANADOL ULSAFAT",
+                    "price": 123456789000,
+                    "images": ["procold.jpeg"],
+                    "stock": 1757,
+                    "description": "",
+                    "product_origin": "Toba Samosir",
+                    "dimention": "Padat",
+                    "weight": 8,
+                    "color": "merah",
+                    "color_1": "Blister @ 6 kaplet",
+                    "category": ""
+                },
+                "id_product_type": 5
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": {
+                "name": "PROCOLD PANADOL ULSAFAT",
+                "price": 123456789000,
+                "images": "[\"procold.jpeg\"]",
+                "stock": 1757,
+                "description": "",
+                "specification": "{\"jenis\":\"Padat\",\"weight\":8}",
+                "asal": "Toba Samosir",
+                "color": "merah",
+                "category": "-",
+                "sold": 0,
+                "cat_product": "obat"
+            }
+        }
+    },
+    {
+        "test_name": "tc79_success_store_obat_with_description_100_characters",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "PROCOLD 123",
+                    "price": 4000,
+                    "images": ["procold.jpeg"],
+                    "stock": 1757,
+                    "description": "MEMBANTU MEREDAKAN GEJALA FLU. DENGAN ADANYA OBAT INI AKAN MEMBANTU MELANCARKAN AKTIVITAS SEHARI-HARI",
+                    "product_origin": "Toba Samosir",
+                    "dimention": "Padat",
+                    "weight": 8,
+                    "color": "",
+                    "color_1": "123456789",
+                    "category": ""
+                },
+                "id_product_type": 5
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "PROCOLD 123",
+                "price": 4000,
+                "images": "[\"procold.jpeg\"]",
+                "stock": 1757,
+                "description": "MEMBANTU MEREDAKAN GEJALA FLU. DENGAN ADANYA OBAT INI AKAN MEMBANTU MELANCARKAN AKTIVITAS SEHARI-HARI",
+                "specification": "{\"jenis\":\"Padat\",\"weight\":8}",
+                "asal": "Toba Samosir",
+                "color": "123456789",
+                "category": "-",
+                "sold": 0,
+                "cat_product": "obat"
+            }
+        }
+    },
+    {
+        "test_name": "tc80_success_store_obat_with_product_origin_symbol_character",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "PROCOLD 1234",
+                    "price": 4000,
+                    "images": ["procold.jpeg"],
+                    "stock": 1757,
+                    "description": "MEMBANTU MEREDAKAN GEJALA FLU. DENGAN ADANYA OBAT INI AKAN MEMBANTU MELANCARKAN AKTIVITAS SEHARI-HARI",
+                    "product_origin": "Toba Samosir jl. Tarutung Kel. Sangkarnihuta kode pos : 22312",
+                    "dimention": "Padat",
+                    "weight": 8,
+                    "color": "",
+                    "color_1": "123456789",
+                    "category": ""
+                },
+                "id_product_type": 5
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "PROCOLD 1234",
+                "price": 4000,
+                "images": "[\"procold.jpeg\"]",
+                "stock": 1757,
+                "description": "MEMBANTU MEREDAKAN GEJALA FLU. DENGAN ADANYA OBAT INI AKAN MEMBANTU MELANCARKAN AKTIVITAS SEHARI-HARI",
+                "specification": "{\"jenis\":\"Padat\",\"weight\":8}",
+                "asal": "Toba Samosir jl. Tarutung Kel. Sangkarnihuta kode pos : 22312",
+                "color": "123456789",
+                "category": "-",
+                "sold": 0,
+                "cat_product": "obat"
+            }
+        }
+    },
+    {
+        "test_name": "tc81_success_store_obat_with_price_numeric",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "PROCOLD 12345",
+                    "price": 1000000000000000000000000,
+                    "images": ["procold.jpeg"],
+                    "stock": 1757,
+                    "description": "MEMBANTU MEREDAKAN GEJALA FLU. DENGAN ADANYA OBAT INI AKAN MEMBANTU MELANCARKAN AKTIVITAS SEHARI-HARI",
+                    "product_origin": "Toba Samosir jl. Tarutung Kel. Sangkarnihuta kode pos : 22312",
+                    "dimention": "Padat",
+                    "weight": 8,
+                    "color": "",
+                    "color_1": "123456789",
+                    "category": ""
+                },
+                "id_product_type": 5
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": {
+                "name": "PROCOLD 12345",
+                "price": 1000000000000000000000000,
+                "images": "[\"procold.jpeg\"]",
+                "stock": 1757,
+                "description": "MEMBANTU MEREDAKAN GEJALA FLU. DENGAN ADANYA OBAT INI AKAN MEMBANTU MELANCARKAN AKTIVITAS SEHARI-HARI",
+                "specification": "{\"jenis\":\"Padat\",\"weight\":8}",
+                "asal": "Toba Samosir jl. Tarutung Kel. Sangkarnihuta kode pos : 22312",
+                "color": "123456789",
+                "category": "-",
+                "sold": 0,
+                "cat_product": "obat"
+            }
+        }
+    },
+    {
+        "test_name": "tc82_invalid_store_obat_with_id_product_type",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "PROCOLD 123",
+                    "price": 4000,
+                    "images": ["procold.jpeg"],
+                    "stock": 1757,
+                    "description": "MEMBANTU MEREDAKAN GEJALA FLU.",
+                    "product_origin": "Toba Samosir",
+                    "dimention": "Padat",
+                    "weight": 8,
+                    "color": "",
+                    "color_1": "123456789",
+                    "category": ""
+                },
+                "id_product_type": 100
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": {
+                "name": "PROCOLD 123",
+                "price": 4000,
+                "images": "[\"procold.jpeg\"]",
+                "stock": 1757,
+                "description": "MEMBANTU MEREDAKAN GEJALA FLU.",
+                "specification": "{\"jenis\":\"Padat\",\"weight\":8}",
+                "asal": "Toba Samosir",
+                "color": "123456789",
+                "category": "-",
+                "sold": 0,
+                "cat_product": "obat"
+            }
+        }
+    },
+    {
+        "test_name": "tc83_success_store_obat_with_name_numeric_symbol_character",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "PROCOLD 123 !@#$%^&*()_+)(*&^%$#Z@Z 1234567890 procold",
+                    "price": 4000,
+                    "images": ["procold.jpeg"],
+                    "stock": 1757,
+                    "description": "MEMBANTU MEREDAKAN GEJALA FLU.",
+                    "product_origin": "Toba Samosir",
+                    "dimention": "Padat",
+                    "weight": 8,
+                    "color": "",
+                    "color_1": "123456789",
+                    "category": ""
+                },
+                "id_product_type": 5
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "ROCOLD 123 !@#$%^&*()_+)(*&^%$#Z@Z 1234567890 procold",
+                "price": 4000,
+                "images": "[\"procold.jpeg\"]",
+                "stock": 1757,
+                "description": "MEMBANTU MEREDAKAN GEJALA FLU.",
+                "specification": "{\"jenis\":\"Padat\",\"weight\":8}",
+                "asal": "Toba Samosir",
+                "color": "123456789",
+                "category": "-",
+                "sold": 0,
+                "cat_product": "obat"
+            }
+        }
+    },
+    
+    
+    {
+        "test_name": "tc84_success_store_makanan",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ikan mas arsik",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik.",
+                    "product_origin": "Balige",
+                    "dimention": "200cm x 70cm",
+                    "weight": 1000,
+                    "color": "1 Minggu",
+                    "category": "Kering"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Ikan mas arsik",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas.jpeg\"]",
+                "stock": 5,
+                "description": "Ikan mas yang diarsik.",
+                "specification": "{\"size_pack\":\"200cm x 70cm\",\"weight\":1000,\"umur_simpan\":\"1 Minggu\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Kering",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    },
+    {
+        "test_name": "tc85_success_store_makanan",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ikan mas arsik",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik.",
+                    "product_origin": "Balige",
+                    "dimention": "200cm x 70cm",
+                    "weight": 1000,
+                    "color": "1 Minggu",
+                    "category": "Kering"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Ikan mas arsik",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas.jpeg\"]",
+                "stock": 5,
+                "description": "Ikan mas yang diarsik.",
+                "specification": "{\"size_pack\":\"200cm x 70cm\",\"weight\":1000,\"umur_simpan\":\"1 Minggu\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Kering",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    },
+    {
+        "test_name": "tc86_success_store_makanan",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ikan mas arsik",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik.",
+                    "product_origin": "Balige",
+                    "dimention": "200cm x 70cm",
+                    "weight": 1000,
+                    "color": "1 Minggu",
+                    "category": "Kering"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Ikan mas arsik",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas.jpeg\"]",
+                "stock": 5,
+                "description": "Ikan mas yang diarsik.",
+                "specification": "{\"size_pack\":\"200cm x 70cm\",\"weight\":1000,\"umur_simpan\":\"1 Minggu\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Kering",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    },
+    {
+        "test_name": "tc87_success_store_makanan",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ikan mas arsik",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik.",
+                    "product_origin": "Balige",
+                    "dimention": "200cm x 70cm",
+                    "weight": 1000,
+                    "color": "1 Minggu",
+                    "category": "Kering"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Ikan mas arsik",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas.jpeg\"]",
+                "stock": 5,
+                "description": "Ikan mas yang diarsik.",
+                "specification": "{\"size_pack\":\"200cm x 70cm\",\"weight\":1000,\"umur_simpan\":\"1 Minggu\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Kering",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    },
+    {
+        "test_name": "tc88_success_store_makanan_color_2_minggu",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ikan mas arsik1",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik.",
+                    "product_origin": "Balige",
+                    "dimention": "200cm x 70cm",
+                    "weight": 1000,
+                    "color": "2 Minggu",
+                    "category": "Kering"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Ikan mas arsik1",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas.jpeg\"]",
+                "stock": 5,
+                "description": "Ikan mas yang diarsik.",
+                "specification": "{\"size_pack\":\"200cm x 70cm\",\"weight\":1000,\"umur_simpan\":\"2 Minggu\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Kering",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    },
+    {
+        "test_name": "tc89_invalid_store_makanan_with_id_product_type_10",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ikan mas arsik",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik.",
+                    "product_origin": "Balige",
+                    "dimention": "200cm x 70cm",
+                    "weight": 1000,
+                    "color": "1 Minggu",
+                    "category": "Kering"
+                },
+                "id_product_type": 10
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": {
+                "name": "Ikan mas arsik",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas.jpeg\"]",
+                "stock": 5,
+                "description": "Ikan mas yang diarsik.",
+                "specification": "{\"size_pack\":\"200cm x 70cm\",\"weight\":1000,\"umur_simpan\":\"1 Minggu\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Kering",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    },
+    {
+        "test_name": "tc90_success_store_makanan_with_category_basah_color_2_minggu",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ikan mas arsik",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik.",
+                    "product_origin": "Balige",
+                    "dimention": "200cm x 70cm",
+                    "weight": 1000,
+                    "color": "2 Minggu",
+                    "category": "Basah"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Ikan mas arsik",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas.jpeg\"]",
+                "stock": 5,
+                "description": "Ikan mas yang diarsik.",
+                "specification": "{\"size_pack\":\"200cm x 70cm\",\"weight\":1000,\"umur_simpan\":\"2 Minggu\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Basah",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    },
+    {
+        "test_name": "tc91_success_store_makanan_with_name_character_numeric_symbol",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ikan mas arsik1234567890198423652839582398516174982198561645982985861498540986 #)(@$*^@(*%&)@(*%)(@$*($@",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik.",
+                    "product_origin": "Balige",
+                    "dimention": "200cm x 70cm",
+                    "weight": 1000,
+                    "color": "1 Minggu",
+                    "category": "Kering"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Ikan mas arsik1234567890198423652839582398516174982198561645982985861498540986 #)(@$*^@(*%&)@(*%)(@$*($@",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas.jpeg\"]",
+                "stock": 5,
+                "description": "Ikan mas yang diarsik.",
+                "specification": "{\"size_pack\":\"200cm x 70cm\",\"weight\":1000,\"umur_simpan\":\"1 Minggu\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Kering",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    },
+    {
+        "test_name": "tc92_invalid store_store_makanan_with_dimention_cahracter_numeric",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ikan mas arsik",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik.",
+                    "product_origin": "Balige",
+                    "dimention": "2000000cm x 7000000cm",
+                    "weight": 1000,
+                    "color": "1 Minggu",
+                    "category": "Kering"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": {
+                "name": "Ikan mas arsik",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas.jpeg\"]",
+                "stock": 5,
+                "description": "Ikan mas yang diarsik.",
+                "specification": "{\"size_pack\":\"2000000cm x 7000000cm\",\"weight\":1000,\"umur_simpan\":\"1 Minggu\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Kering",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    },
+    {
+        "test_name": "tc93_success_store_makanan_with color_10_minggu",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ikan mas arsik",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik.",
+                    "product_origin": "Balige",
+                    "dimention": "200cm x 70cm",
+                    "weight": 1000,
+                    "color": "10 Minggu",
+                    "category": "Kering"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": {
+                "name": "Ikan mas arsik",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas.jpeg\"]",
+                "stock": 5,
+                "description": "Ikan mas yang diarsik.",
+                "specification": "{\"size_pack\":\"200cm x 70cm\",\"weight\":1000,\"umur_simpan\":\"10 Minggu\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Kering",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    },
+    {
+        "test_name": "tc94_success_store_makanan_color_1_bulan",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ikan mas arsik",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik.",
+                    "product_origin": "Balige",
+                    "dimention": "200cm x 70cm",
+                    "weight": 1000,
+                    "color": "1 Bulan",
+                    "category": "Kering"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Ikan mas arsik",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas.jpeg\"]",
+                "stock": 5,
+                "description": "Ikan mas yang diarsik.",
+                "specification": "{\"size_pack\":\"200cm x 70cm\",\"weight\":1000,\"umur_simpan\":\"1 Bulan\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Kering",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    },
+    {
+        "test_name": "tc95_invalid_store_makanan_with_color_20_bulan",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ikan mas arsik",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik.",
+                    "product_origin": "Balige",
+                    "dimention": "200cm x 70cm",
+                    "weight": 1000,
+                    "color": "20 Bulan",
+                    "category": "Kering"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": {
+                "name": "Ikan mas arsik",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas.jpeg\"]",
+                "stock": 5,
+                "description": "Ikan mas yang diarsik.",
+                "specification": "{\"size_pack\":\"200cm x 70cm\",\"weight\":1000,\"umur_simpan\":\"20 Bulan\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Kering",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    },
+    {
+        "test_name": "tc96_invalid_store_makanan_with_dimention_null",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ikan mas arsik",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik.",
+                    "product_origin": "Balige",
+                    "dimention": "0cm x 0cm",
+                    "weight": 1000,
+                    "color": "1 Minggu",
+                    "category": "Kering"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": {
+                "name": "Ikan mas arsik",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas.jpeg\"]",
+                "stock": 5,
+                "description": "Ikan mas yang diarsik.",
+                "specification": "{\"size_pack\":\"0cm x 0cm\",\"weight\":1000,\"umur_simpan\":\"1 Minggu\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Kering",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    },
+    {
+        "test_name": "tc97_success_store_makanan_with_name_character_description_character",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ikan mas arsik khas toba samosir sumatera utara terbaik",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik adalah ikan berwarna keemasan yang terdapat di Sumatera Utaara sebagai arsik salah satu ciri makanan yang ada di toba samosir atau makanan khas batak toba.",
+                    "product_origin": "Balige",
+                    "dimention": "200cm x 70cm",
+                    "weight": 1000,
+                    "color": "1 Minggu",
+                    "category": "Kering"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Ikan mas arsik khas toba samosir sumatera utara terbaik",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas.jpeg\"]",
+                "stock": 5,
+                "description": "IIkan mas yang diarsik adalah ikan berwarna keemasan yang terdapat di Sumatera Utaara sebagai arsik salah satu ciri makanan yang ada di toba samosir atau makanan khas batak toba.",
+                "specification": "{\"size_pack\":\"200cm x 70cm\",\"weight\":1000,\"umur_simpan\":\"1 Minggu\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Kering",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    },
+    {
+        "test_name": "tc98_invalid_store_makanan_weight",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ikan mas arsik",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik.",
+                    "product_origin": "Balige",
+                    "dimention": "200cm x 70cm",
+                    "weight": 1000000000000000000,
+                    "color": "1 Minggu",
+                    "category": "Kering"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": {
+                "name": "Ikan mas arsik",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas.jpeg\"]",
+                "stock": 5,
+                "description": "Ikan mas yang diarsik.",
+                "specification": "{\"size_pack\":\"200cm x 70cm\",\"weight\":1000000000000000000,\"umur_simpan\":\"1 Minggu\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Kering",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    },
+    {
+        "test_name": "tc99_invalid_store_makanan_with_dimention_character",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ikan mas arsik",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik.",
+                    "product_origin": "Balige",
+                    "dimention": "cm x cm",
+                    "weight": 1000,
+                    "color": "1 Minggu",
+                    "category": "Kering"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": true,
+            "product": {
+                "name": "Ikan mas arsik",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas.jpeg\"]",
+                "stock": 5,
+                "description": "Ikan mas yang diarsik.",
+                "specification": "{\"size_pack\":\"cm x cm\",\"weight\":1000,\"umur_simpan\":\"1 Minggu\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Kering",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    },
+    {
+        "test_name": "tc100_success_store_makanan_with_images_character_symbol",
+        "test_data": {
+            "merchant": {
+                "username": "merchant"
+            },
+            "request": {
+                "product": {
+                    "name": "Ikan mas arsiksx",
+                    "price": 45000,
+                    "images": ["gambar-ikan-mas-arsik-kuning-keemasan-sedap-disantap-dengan-nasi.jpeg"],
+                    "stock": 5,
+                    "description": "Ikan mas yang diarsik.",
+                    "product_origin": "Balige",
+                    "dimention": "200cm x 70cm",
+                    "weight": 1000,
+                    "color": "1 Minggu",
+                    "category": "Kering"
+                },
+                "id_product_type": 3
+            }
+        },
+        "test_expected_result": {
+            "is_error": false,
+            "product": {
+                "name": "Ikan mas arsiksx",
+                "price": 45000,
+                "images": "[\"gambar-ikan-mas-arsik-kuning-keemasan-sedap-disantap-dengan-nasi.jpeg\"]",
+                "stock": 5,
+                "description": "Ikan mas yang diarsik.",
+                "specification": "{\"size_pack\":\"200cm x 70cm\",\"weight\":1000,\"umur_simpan\":\"1 Minggu\"}",
+                "asal": "Balige",
+                "color": "-",
+                "category": "Kering",
+                "sold": 0,
+                "cat_product": "makanan"
+            }
+        }
+    }
+]

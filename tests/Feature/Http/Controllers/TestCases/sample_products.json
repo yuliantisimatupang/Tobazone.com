@@ -1,0 +1,14 @@
+{
+    "sample_1": {
+        "name": "Ulos Sadum",
+        "price": 70000,
+        "images": ["1601342622ulos.jpeg"],
+        "stock": 15,
+        "description": "Ulos Sadum dimaknai oleh suku Batak sebagai simbol suka cita sebagai pertanda motifasi penyemangat dalam suatu keluarga agar tetap bersuka cita melakukan segala aktifitas sehari-hari.",
+        "product_origin": "Pollung",
+        "dimention": "200cm x 70cm",
+        "weight": 300,
+        "color": "Merah",
+        "category": "Mesin"
+    }
+}
